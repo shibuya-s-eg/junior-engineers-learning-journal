@@ -61,4 +61,4 @@ Disallow: /
 User-agent: ZoominfoBot
 Disallow: /
 
-Sitemap: https://example.com/sitemap.xml
+Sitemap: https://shibuya-s-eg.github.io/sitemap.xml
