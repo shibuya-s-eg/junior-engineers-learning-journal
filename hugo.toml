@@ -9,11 +9,11 @@ theme = "LoveIt"
 title = "LoveIt"
 
 # determines default content language ["en", "zh-cn", "fr", "pl", ...]
-defaultContentLanguage = "jp"
+defaultContentLanguage = "en"
 # language code ["en", "zh-CN", "fr", "pl", ...]
-languageCode = "ja"
+languageCode = "en"
 # language name ["English", "简体中文", "Français", "Polski", ...]
-languageName = "Japanese"
+languageName = "English"
 # whether to include Chinese/Japanese/Korean
 hasCJKLanguage = true
 
