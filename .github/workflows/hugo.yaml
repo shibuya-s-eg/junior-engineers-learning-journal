@@ -14,14 +14,18 @@ jobs:
       - name: リポジトリをチェックアウト
         uses: actions/checkout@v4
 
+      - name: サブモジュールを更新
+        run: git submodule update --init --recursive
+
       - name: Hugo をセットアップ
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: 'latest'
+          hugo-version: '0.112.5'  # ローカル環境と同じバージョンに変更
           extended: true
 
       - name: Hugo でサイトをビルド
-        run: hugo --minify
+        run: |
+          hugo --gc --minify  # キャッシュをクリアしてからビルド
 
       - name: GitHub Pages にデプロイ
         uses: peaceiris/actions-gh-pages@v4
@@ -29,4 +33,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public  # Hugo の出力フォルダ
           publish_branch: gh-pages
-
