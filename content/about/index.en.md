@@ -1,9 +1,9 @@
 ---
-title: "About LoveIt"
-date: 2019-08-02T11:04:49+08:00
+title: "About Me"
+date: 2025-01-01T00:00:00+09:00
 draft: false
-description: "About LoveIt"
-images: ["/Apple-Devices-Preview.png"]
+description: "About Me"
+images: ["/profile.png"]
 
 lightgallery: true
 
@@ -12,7 +12,7 @@ math:
 ---
 
 {{< style "img { height: 1.25rem; }" >}}
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/dillonzq/LoveIt?style=flat-square)](https://github.com/dillonzq/LoveIt/releases)
+{{/*[![GitHub release (latest by date)](https://img.shields.io/github/v/release/dillonzq/LoveIt?style=flat-square)](https://github.com/dillonzq/LoveIt/releases)*/}}
 [![Hugo](https://img.shields.io/badge/Hugo-%5E0.128.0-ff4088?style=flat-square&logo=hugo)](https://gohugo.io/)
 [![License](https://img.shields.io/github/license/dillonzq/LoveIt?style=flat-square)](https://github.com/dillonzq/LoveIt/blob/master/LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/dillonzq/LoveIt?style=social)](https://github.com/dillonzq/LoveIt)

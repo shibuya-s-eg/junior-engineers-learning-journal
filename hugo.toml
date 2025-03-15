@@ -9,13 +9,14 @@ theme = "LoveIt"
 title = "LoveIt"
 
 # determines default content language ["en", "zh-cn", "fr", "pl", ...]
-defaultContentLanguage = "en"
+defaultContentLanguage = "ja"
 # language code ["en", "zh-CN", "fr", "pl", ...]
-languageCode = "en"
+languageCode = "ja"
 # language name ["English", "简体中文", "Français", "Polski", ...]
-languageName = "English"
+languageName = "日本語"
 # whether to include Chinese/Japanese/Korean
 hasCJKLanguage = true
+enableLangChange = true
 
 # copyright description used only for seo schema
 copyright = ""
@@ -70,24 +71,24 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   # site default theme ["auto", "light", "dark"]
   defaultTheme = "auto"
   # public git repo url only then enableGitInfo is true
-  gitRepo = "https://github.com/dillonzq/LoveIt"
+  gitRepo = "https://github.com/shibuya-s-eg/junior-engineers-learning-journal"
   # which hash function used for SRI, when empty, no SRI is used
   # ["sha256", "sha384", "sha512", "md5"]
   fingerprint = ""
   # date format
-  dateFormat = "2006-01-02"
+  dateFormat = "2025-01-01"
   # website title for Open Graph and Twitter Cards
-  title = "LoveIt"
+  title = "駆け出しエンジニアの学習記録"
   # website description for RSS, SEO, Open Graph and Twitter Cards
-  description = "Hugo theme - LoveIt"
+  description = "駆け出しエンジニアの学習記録"
   # website images for Open Graph and Twitter Cards
-  images = ["/logo.png"]
+  images = ["/journal-text.png"]
 
   # Author config
   [params.author]
-    name = "xxxx"
-    email = ""
-    link = ""
+    name = "shibuya.s.eg@gmail.com"
+    email = "shibuya.s.eg@gmail.com"
+    link = "https://github.com/shibuya-s-eg/junior-engineers-learning-journal"
 
   # Header config
   [params.header]
@@ -100,9 +101,10 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       # URL of the LOGO
       logo = ""
       # title name
-      name = "LoveIt"
+      name = "駆け出しエンジニアの学習記録"
       # you can add extra information before the name (HTML format is supported), such as icons
-      pre = "<i class='far fa-kiss-wink-heart fa-fw' aria-hidden='true'></i>"
+      # pre = "<i class='far fa-kiss-wink-heart fa-fw' aria-hidden='true'></i>"
+      pre = "<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-journal-text' viewBox='0 0 16 16'><path d='M5 10.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5'/><path d='M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2'/><path d='M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z'/></svg>"
       # you can add extra information after the name (HTML format is supported), such as icons
       post = ""
       # whether to use typeit animation for title name
@@ -116,15 +118,15 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     # whether to show Hugo and theme info
     hugo = true
     # whether to show copyright info
-    copyright = true
+    # copyright = true
     # whether to show the author
-    author = true
+    # author = true
     # site creation time
-    since = 2019
+    since = 2025
     # ICP info only in China (HTML format is supported)
-    icp = ""
+    # icp = ""
     # license info (HTML format is supported)
-    license= '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
+    # license= '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
 
   # Section (all posts) page config
   [params.section]
@@ -147,7 +149,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   # App icon config
   [params.app]
     # optional site title override for the app when added to an iOS home screen or Android launcher
-    title = "LoveIt"
+    title = "駆け出しエンジニアの学習記録"
     # whether to omit favicon resource links
     noFavicon = false
     # modern SVG favicon to use in place of older style .png and .ico files
@@ -196,7 +198,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       # title shown in home page (HTML format is supported)
       title = ""
       # subtitle shown in home page (HTML format is supported)
-      subtitle = "A Clean, Elegant but Advanced Hugo Theme"
+      subtitle = "若手エンジニアの学習記録です。"
       # whether to use typeit animation for subtitle
       typeit = true
       # whether to show social links
@@ -408,7 +410,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
         meta= ""
         pageSize = 10
         # automatically adapt the current theme i18n configuration when empty
-        lang = ""
+        lang = "ja"
         visitor = true
         recordIP = true
         highlight = true
@@ -427,7 +429,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
         numPosts = 10
         appId = ""
         # automatically adapt the current theme i18n configuration when empty
-        languageCode = ""
+        languageCode = "ja"
       # Telegram comments config (https://comments.app/)
       [params.page.comment.telegram]
         enable = false
@@ -622,6 +624,103 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 
 # Multilingual
 [languages]
+  [languages.ja]
+    languageCode = "ja"
+    languageName = "日本語"
+    hasCJKLanguage = true
+    weight = 1
+    contentDir = "content"
+    copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
+    [languages.ja.menu]
+      [[languages.ja.menu.main]]
+        weight = 1
+        identifier = "posts"
+        pre = ""
+        post = ""
+        name = "Posts"
+        url = "/posts/"
+        title = ""
+      [[languages.ja.menu.main]]
+        weight = 2
+        identifier = "tags"
+        pre = ""
+        post = ""
+        name = "Tags"
+        url = "/tags/"
+        title = ""
+      [[languages.ja.menu.main]]
+        weight = 3
+        identifier = "categories"
+        pre = ""
+        post = ""
+        name = "Categories"
+        url = "/categories/"
+        title = ""
+      [[languages.ja.menu.main]]
+        weight = 4
+        identifier = "documentation"
+        pre = ""
+        post = ""
+        name = "Docs"
+        url = "/categories/documentation/"
+        title = ""
+      [[languages.ja.menu.main]]
+        weight = 5
+        identifier = "about"
+        pre = ""
+        post = ""
+        name = "About"
+        url = "/about/"
+        title = ""
+      [[languages.ja.menu.main]]
+        weight = 6
+        identifier = "github"
+        pre = "<i class='fab fa-github fa-fw' aria-hidden='true'></i>"
+        post = ""
+        name = ""
+        url = "https://github.com/shibuya-s-eg/junior-engineers-learning-journal"
+        title = "GitHub"
+    [languages.ja.params]
+      [languages.ja.params.search]
+        enable = true
+        type = "algolia"
+        contentLength = 4000
+        placeholder = ""
+        maxResultLength = 10
+        snippetLength = 30
+        highlightTag = "em"
+        absoluteURL = false
+        [languages.ja.params.search.algolia]
+          index = "index"
+          appID = "4D1IDY8JU6"
+          searchKey = "05332ac5ed76655a511f0da583a9afac"
+      [languages.ja.params.home]
+        rss = 10
+        [languages.ja.params.home.profile]
+          enable = true
+          gravatarEmail = ""
+          avatarURL = "/images/avatar.png"
+          title = ""
+          subtitle = "若手エンジニアの学習記録です。"
+          typeit = true
+          social = true
+          disclaimer = ""
+      [languages.ja.params.social]
+        GitHub = "https://github.com/shibuya-s-eg"
+        # X = "xxxx"
+        # Instagram = "xxxx"
+        # Facebook = "xxxx"
+        # Telegram = "xxxx"
+        # Youtubelegacy = "xxxx"
+        # HuggingFace = "xxxx"
+        # Threads = "xxxx"
+        # Phone = "555-555-555"
+        Email = "shibuya.s.eg@gmail.com"
+        RSS = true
+        # [languages.ja.params.social.Mastodon]
+        #   id = "@xxxx"
+        #   prefix = "https://mastodon.technology/"
+
   [languages.en]
     weight = 1
     languageCode = "en"
@@ -675,7 +774,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
         pre = "<i class='fab fa-github fa-fw' aria-hidden='true'></i>"
         post = ""
         name = ""
-        url = "https://github.com/dillonzq/LoveIt"
+        url = "https://github.com/shibuya-s-eg/junior-engineers-learning-journal"
         title = "GitHub"
     [languages.en.params]
       [languages.en.params.search]
@@ -717,94 +816,3 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
         [languages.en.params.social.Mastodon]
           id = "@xxxx"
           prefix = "https://mastodon.technology/"
-
-  [languages.zh-cn]
-    weight = 2
-    languageCode = "zh-CN"
-    languageName = "简体中文"
-    hasCJKLanguage = true
-    copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
-    [languages.zh-cn.menu]
-      [[languages.zh-cn.menu.main]]
-        weight = 1
-        identifier = "posts"
-        pre = ""
-        post = ""
-        name = "所有文章"
-        url = "/posts/"
-        title = ""
-      [[languages.zh-cn.menu.main]]
-        weight = 2
-        identifier = "tags"
-        pre = ""
-        post = ""
-        name = "标签"
-        url = "/tags/"
-        title = ""
-      [[languages.zh-cn.menu.main]]
-        weight = 3
-        identifier = "categories"
-        pre = ""
-        post = ""
-        name = "分类"
-        url = "/categories/"
-        title = ""
-      [[languages.zh-cn.menu.main]]
-        weight = 4
-        identifier = "documentation"
-        pre = ""
-        name = "文档"
-        url = "/categories/documentation/"
-        title = ""
-      [[languages.zh-cn.menu.main]]
-        weight = 5
-        identifier = "about"
-        pre = ""
-        post = ""
-        name = "关于"
-        url = "/about/"
-        title = ""
-      [[languages.zh-cn.menu.main]]
-        weight = 6
-        identifier = "github"
-        pre = "<i class='fab fa-github fa-fw' aria-hidden='true'></i>"
-        post = ""
-        name = ""
-        url = "https://github.com/dillonzq/LoveIt"
-        title = "GitHub"
-    [languages.zh-cn.params]
-      [languages.zh-cn.params.search]
-        enable = true
-        type = "algolia"
-        contentLength = 4000
-        placeholder = ""
-        maxResultLength = 10
-        snippetLength = 50
-        highlightTag = "em"
-        absoluteURL = false
-        [languages.zh-cn.params.search.algolia]
-          index = "index"
-          appID = "GZT24PWKNT"
-          searchKey = "634ab679e825b815de2663de38908f9d"
-      [languages.zh-cn.params.home]
-        rss = 10
-        [languages.zh-cn.params.home.profile]
-          enable = true
-          gravatarEmail = ""
-          avatarURL = "/images/avatar.png"
-          title = ""
-          subtitle = "一个简洁、优雅且高效的 Hugo 主题"
-          typeit = true
-          social = true
-          disclaimer = ""
-      [languages.zh-cn.params.social]
-        GitHub = "xxxx"
-        Weibo = "xxxx"
-        Steam = "xxxx"
-        Zhihu = "xxxx"
-        Douban = "xxxx"
-        Devto = "xxxx"
-        Bilibili = "xxxx"
-        Email = "xxxx@xxxx.com"
-        Phone = "555-555-555"
-        RSS = true
