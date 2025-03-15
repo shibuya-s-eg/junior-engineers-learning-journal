@@ -10,6 +10,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write  # リポジトリのコンテンツに書き込み権限を付与
+      pages: write  # GitHub Pagesに書き込み権限を付与
+
     steps:
       - name: リポジトリをチェックアウト
         uses: actions/checkout@v4
