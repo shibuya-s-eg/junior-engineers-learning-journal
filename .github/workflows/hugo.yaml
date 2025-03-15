@@ -20,7 +20,7 @@ jobs:
       - name: Hugo をセットアップ
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: '0.112.5'  # ローカル環境と同じバージョンに変更
+          hugo-version: '0.131.0'  # ローカル環境と同じバージョンに変更
           extended: true
 
       - name: Hugo でサイトをビルド
