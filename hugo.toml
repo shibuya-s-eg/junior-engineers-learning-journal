@@ -1,5 +1,4 @@
 baseURL = "https://shibuya-s-eg.github.io/junior-engineers-learning-journal/"
-publishDir = "public"
 
 # theme
 theme = "LoveIt"
