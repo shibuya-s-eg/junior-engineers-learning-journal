@@ -4,21 +4,21 @@
         <link>http://localhost:1313/junior-engineers-learning-journal/posts/</link>
         <description>All Posts | LoveIt</description>
         <generator>Hugo -- gohugo.io</generator><language>ja</language><managingEditor>shibuya.s.eg@gmail.com (shibuya.s.eg@gmail.com)</managingEditor>
-            <webMaster>shibuya.s.eg@gmail.com (shibuya.s.eg@gmail.com)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 16 Mar 2025 00:00:00 &#43;0900</lastBuildDate><atom:link href="http://localhost:1313/junior-engineers-learning-journal/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>shibuya.s.eg@gmail.com (shibuya.s.eg@gmail.com)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 18 Mar 2025 00:00:00 &#43;0900</lastBuildDate><atom:link href="http://localhost:1313/junior-engineers-learning-journal/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>ClamAVを完全に理解する</title>
+    <link>http://localhost:1313/junior-engineers-learning-journal/security-clamav/</link>
+    <pubDate>Tue, 18 Mar 2025 00:00:00 &#43;0900</pubDate>
+    <author>しぶや</author>
+    <guid>http://localhost:1313/junior-engineers-learning-journal/security-clamav/</guid>
+    <description><![CDATA[こんにちは、しぶやです。 近いうちにClamAVを利用する機会がありそうなので、これを機にClamAVを「完全に理解」していきたいと思います。]]></description>
+</item>
+<item>
     <title>NASを完全に理解する</title>
     <link>http://localhost:1313/junior-engineers-learning-journal/database-storage-nas/</link>
     <pubDate>Sun, 16 Mar 2025 00:00:00 &#43;0900</pubDate>
     <author>しぶや</author>
     <guid>http://localhost:1313/junior-engineers-learning-journal/database-storage-nas/</guid>
     <description><![CDATA[こんにちは、しぶやです。 最近、Synologyのnasを中古で安く仕入れたので、これを機にNASを「完全に理解」していきたいと思います。 TL;DR N]]></description>
-</item>
-<item>
-    <title>NASを完全に理解する</title>
-    <link>http://localhost:1313/junior-engineers-learning-journal/security-clamav/</link>
-    <pubDate>Sun, 16 Mar 2025 00:00:00 &#43;0900</pubDate>
-    <author>しぶや</author>
-    <guid>http://localhost:1313/junior-engineers-learning-journal/security-clamav/</guid>
-    <description><![CDATA[レポートとかしてる、winもあり、dbのパスの中身、設定ファイルの内容、オンアクセススキャン、デーモン、メールフイルタリング、dbスキャンの]]></description>
 </item>
 <item>
     <title>執筆検討メモ</title>
