@@ -46,7 +46,7 @@ Linuxにおけるファイルパーミッションは以下のような形をし
     * d---------\
     ファイルの種類を表す。
         * - ... ファイル
-        * l ... シンボリックリンク
+        * l ... リンク
         * d ... ディレクトリ
         * etc.
     * -rwx------\
@@ -66,7 +66,43 @@ Linuxにおけるファイルパーミッションは以下のような形をし
 
 {{< image src="echo.png" width="400px" height="300px" caption="echo" >}}
 
-echo
+上記から、echoは管理者のみが書き換えも可能、他は読み込みと実行のみが可能です。
+実際に、書き換えを行おうとすると以下のようにエラーになります。
+
+{{< image src="echo.png" width="400px" height="300px" caption="echo" >}}
+
+また、実行には読み込みが必要です。では、実行権限は読み込み権限を包含しているのでしょうか？
+読み込み権限なしに、実行権限だけを持つようなパターンはあるのでしょうか？これについては、次節で見ていきたいと思います。
+
+ここでは、アクセス権限意外の部分を復習してみましょう。
+
+* リンク数
+
+アクセス権限の横にある数字はリンク数です。
+Windowsでいうショートカットに近いものです。
+
+{{< image src="echo.png" width="400px" height="300px" caption="echolink" >}}
+
+ここでは、実際にechoを呼ぶecholinkを作成しています。
+echolinkからechoが呼び出されていることがわかります。
+
+{{< admonition note "シンボリックリンクとハードリンク" >}}
+Linuxのリンクにはシンボリックリンクとハードリンクがあります。
+Windowsのショートカットに近いものはシンボリックリンクの方です。
+* シンボリックリンク\
+    * ファイルやディレクトリへのパス情報
+    * 参照先が消えるとリンクが使えなくなる。hhhhhhhhhhhhhhh
+* ハードリンク\
+    * 元ファイルと同じinodeを指す\
+    → もとのファイルが消えても、ハードリンクからはデータにアクセス可能\
+    → リンク先の変更は元ファイルにも影響\
+    ※ これについては、2.2 VFSで詳しく話します。
+{{< /admonition >}}
+
+* 所有者、所有グループ
+* 最終更新日時
+* サイズ
+* ファイル名
 
 {{< admonition note "chmod, chown" >}}
 以下の2つはよく使うコマンドですね。
@@ -80,14 +116,58 @@ echo
     （hoge.txtの所有者をhogeに、所有グループをghogeに変更）
 {{< /admonition >}}
 
+{{< admonition tip >}}
+chmodで存在しないユーザを指定したらどうなのでしょう。
+
+{{< image src="chmod.png" width="400px" height="300px" caption="chmod" >}}
+
+と言われ怒られるようです。
+{{< /admonition >}}
 
 ### 1.2　その他パーミッション
 
-setuid, setgid, stickybit
+その他のパーミッションについて見ていきます。
 
-### 1.3　権限昇格
+* setuid, setgid
+
+setuid, setgidは実行時に所有者の権限で実行するためのものです。
+passwdを例に見ていきましょう。
+
+{{< image src="passwd.png" width="400px" height="300px" caption="passwd" >}}
+
+
+{{< admonition note "uid・gid" >}}
+ユーザやグループのための一意の識別子です。
+ユーザの情報は"/etc/passwd"に、グループの情報は"/etc/group"にあります。
+
+<div class="image-row">
+    {{< image src="etc-passwd.png" width="400px" height="300px" caption="/etc/passwd" >}}
+    {{< image src="etc-group.png" width="400px" height="300px" caption="/etc/group" >}}
+</div>
+
+ユーザIDは1000以上が割り当てられます。rootは0です。
+{{< /admonition >}}
+
+{{< admonition note "shadow" >}}
+先程の"/etc/passwd"には実際のパスワードは入っていませんでした。
+これは、"/etc/passwd"はすべてのユーザから読み込まれてしまうため、パスワードが他のユーザに漏洩してしまうからです。
+実際のパスワードは"/etc/passwd"に保存されています。
+
+{{< image src="etc-shadow.png" width="400px" height="300px" caption="/etc/shadow" >}}
+
+構造：
+
+{{< /admonition >}}
+
+
+
+* stickybit
+
+sudo
 
 ### 1.4　コピー時の動作
+
+実行ファイル、リンクファイル
 
 ### 1.5　子プロセスへの継承
 
