@@ -4,7 +4,15 @@
         <link>http://localhost:1313/junior-engineers-learning-journal/posts/</link>
         <description>All Posts | LoveIt</description>
         <generator>Hugo -- gohugo.io</generator><language>ja</language><managingEditor>shibuya.s.eg@gmail.com (shibuya.s.eg@gmail.com)</managingEditor>
-            <webMaster>shibuya.s.eg@gmail.com (shibuya.s.eg@gmail.com)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 18 Mar 2025 00:00:00 &#43;0900</lastBuildDate><atom:link href="http://localhost:1313/junior-engineers-learning-journal/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>shibuya.s.eg@gmail.com (shibuya.s.eg@gmail.com)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 20 Mar 2025 00:00:00 &#43;0900</lastBuildDate><atom:link href="http://localhost:1313/junior-engineers-learning-journal/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Linuxのアクセス制御を完全に理解する</title>
+    <link>http://localhost:1313/junior-engineers-learning-journal/os-linux-access-controle/</link>
+    <pubDate>Thu, 20 Mar 2025 00:00:00 &#43;0900</pubDate>
+    <author>しぶや</author>
+    <guid>http://localhost:1313/junior-engineers-learning-journal/os-linux-access-controle/</guid>
+    <description><![CDATA[こんにちは、しぶやです。 Linuxのアクセス制御の理解がかなり浅いと気づいたので、これを機にLinuxのアクセス制御を「完全に理解」していき]]></description>
+</item>
+<item>
     <title>ClamAVを完全に理解する</title>
     <link>http://localhost:1313/junior-engineers-learning-journal/security-clamav/</link>
     <pubDate>Tue, 18 Mar 2025 00:00:00 &#43;0900</pubDate>

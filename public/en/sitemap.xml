@@ -2,19 +2,19 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://localhost:1313/junior-engineers-learning-journal/en/theme-documentation-basics/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://localhost:1313/junior-engineers-learning-journal/en/theme-documentation-content/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://localhost:1313/junior-engineers-learning-journal/en/theme-documentation-built-in-shortcodes/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://localhost:1313/junior-engineers-learning-journal/en/theme-documentation-extended-shortcodes/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://localhost:1313/junior-engineers-learning-journal/en/basic-markdown-syntax/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://localhost:1313/junior-engineers-learning-journal/en/theme-documentation-mermaid-shortcode/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://localhost:1313/junior-engineers-learning-journal/en/emoji-support/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://localhost:1313/junior-engineers-learning-journal/en/theme-documentation-echarts-shortcode/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://localhost:1313/junior-engineers-learning-journal/en/theme-documentation-mapbox-shortcode/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://localhost:1313/junior-engineers-learning-journal/en/theme-documentation-music-shortcode/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://localhost:1313/junior-engineers-learning-journal/en/theme-documentation-bilibili-shortcode/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://localhost:1313/junior-engineers-learning-journal/en/theme-documentation-typeit-shortcode/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://localhost:1313/junior-engineers-learning-journal/en/about/</loc><lastmod>2025-03-16T00:17:51&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://localhost:1313/junior-engineers-learning-journal/en/theme-documentation-basics/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>http://localhost:1313/junior-engineers-learning-journal/en/theme-documentation-content/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>http://localhost:1313/junior-engineers-learning-journal/en/theme-documentation-built-in-shortcodes/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>http://localhost:1313/junior-engineers-learning-journal/en/theme-documentation-extended-shortcodes/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>http://localhost:1313/junior-engineers-learning-journal/en/basic-markdown-syntax/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>http://localhost:1313/junior-engineers-learning-journal/en/theme-documentation-mermaid-shortcode/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>http://localhost:1313/junior-engineers-learning-journal/en/emoji-support/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>http://localhost:1313/junior-engineers-learning-journal/en/theme-documentation-echarts-shortcode/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>http://localhost:1313/junior-engineers-learning-journal/en/theme-documentation-mapbox-shortcode/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>http://localhost:1313/junior-engineers-learning-journal/en/theme-documentation-music-shortcode/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>http://localhost:1313/junior-engineers-learning-journal/en/theme-documentation-bilibili-shortcode/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>http://localhost:1313/junior-engineers-learning-journal/en/theme-documentation-typeit-shortcode/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>http://localhost:1313/junior-engineers-learning-journal/en/about/</loc><lastmod>2025-03-16T00:17:51&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
                         rel="alternate"
                         hreflang="ja"
                         href="http://localhost:1313/junior-engineers-learning-journal/about/"
@@ -23,7 +23,7 @@
                     hreflang="en"
                     href="http://localhost:1313/junior-engineers-learning-journal/en/about/"
                     /></url><url>
-            <loc>http://localhost:1313/junior-engineers-learning-journal/en/</loc><lastmod>2025-03-16T00:17:51&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://localhost:1313/junior-engineers-learning-journal/en/</loc><lastmod>2025-03-16T00:17:51&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
                         rel="alternate"
                         hreflang="ja"
                         href="http://localhost:1313/junior-engineers-learning-journal/"
@@ -32,7 +32,7 @@
                     hreflang="en"
                     href="http://localhost:1313/junior-engineers-learning-journal/en/"
                     /></url><url>
-            <loc>http://localhost:1313/junior-engineers-learning-journal/en/categories/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://localhost:1313/junior-engineers-learning-journal/en/categories/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
                         rel="alternate"
                         hreflang="ja"
                         href="http://localhost:1313/junior-engineers-learning-journal/categories/"
@@ -41,7 +41,7 @@
                     hreflang="en"
                     href="http://localhost:1313/junior-engineers-learning-journal/en/categories/"
                     /></url><url>
-            <loc>http://localhost:1313/junior-engineers-learning-journal/en/tags/configuration/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://localhost:1313/junior-engineers-learning-journal/en/tags/configuration/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
                         rel="alternate"
                         hreflang="ja"
                         href="http://localhost:1313/junior-engineers-learning-journal/tags/configuration/"
@@ -50,7 +50,7 @@
                     hreflang="en"
                     href="http://localhost:1313/junior-engineers-learning-journal/en/tags/configuration/"
                     /></url><url>
-            <loc>http://localhost:1313/junior-engineers-learning-journal/en/tags/installation/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://localhost:1313/junior-engineers-learning-journal/en/tags/installation/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
                         rel="alternate"
                         hreflang="ja"
                         href="http://localhost:1313/junior-engineers-learning-journal/tags/installation/"
@@ -59,7 +59,7 @@
                     hreflang="en"
                     href="http://localhost:1313/junior-engineers-learning-journal/en/tags/installation/"
                     /></url><url>
-            <loc>http://localhost:1313/junior-engineers-learning-journal/en/posts/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://localhost:1313/junior-engineers-learning-journal/en/posts/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
                         rel="alternate"
                         hreflang="ja"
                         href="http://localhost:1313/junior-engineers-learning-journal/posts/"
@@ -68,7 +68,7 @@
                     hreflang="en"
                     href="http://localhost:1313/junior-engineers-learning-journal/en/posts/"
                     /></url><url>
-            <loc>http://localhost:1313/junior-engineers-learning-journal/en/tags/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://localhost:1313/junior-engineers-learning-journal/en/tags/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
                         rel="alternate"
                         hreflang="ja"
                         href="http://localhost:1313/junior-engineers-learning-journal/tags/"
@@ -77,7 +77,7 @@
                     hreflang="en"
                     href="http://localhost:1313/junior-engineers-learning-journal/en/tags/"
                     /></url><url>
-            <loc>http://localhost:1313/junior-engineers-learning-journal/en/tags/content/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://localhost:1313/junior-engineers-learning-journal/en/tags/content/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
                         rel="alternate"
                         hreflang="ja"
                         href="http://localhost:1313/junior-engineers-learning-journal/tags/content/"
@@ -86,7 +86,7 @@
                     hreflang="en"
                     href="http://localhost:1313/junior-engineers-learning-journal/en/tags/content/"
                     /></url><url>
-            <loc>http://localhost:1313/junior-engineers-learning-journal/en/tags/markdown/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://localhost:1313/junior-engineers-learning-journal/en/tags/markdown/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
                         rel="alternate"
                         hreflang="ja"
                         href="http://localhost:1313/junior-engineers-learning-journal/tags/markdown/"
@@ -95,8 +95,8 @@
                     hreflang="en"
                     href="http://localhost:1313/junior-engineers-learning-journal/en/tags/markdown/"
                     /></url><url>
-            <loc>http://localhost:1313/junior-engineers-learning-journal/en/tags/shortcodes/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://localhost:1313/junior-engineers-learning-journal/en/tags/html/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://localhost:1313/junior-engineers-learning-journal/en/tags/shortcodes/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>http://localhost:1313/junior-engineers-learning-journal/en/tags/html/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
                         rel="alternate"
                         hreflang="ja"
                         href="http://localhost:1313/junior-engineers-learning-journal/tags/html/"
@@ -105,7 +105,7 @@
                     hreflang="en"
                     href="http://localhost:1313/junior-engineers-learning-journal/en/tags/html/"
                     /></url><url>
-            <loc>http://localhost:1313/junior-engineers-learning-journal/en/categories/markdown/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://localhost:1313/junior-engineers-learning-journal/en/categories/markdown/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
                         rel="alternate"
                         hreflang="ja"
                         href="http://localhost:1313/junior-engineers-learning-journal/categories/markdown/"
@@ -114,8 +114,8 @@
                     hreflang="en"
                     href="http://localhost:1313/junior-engineers-learning-journal/en/categories/markdown/"
                     /></url><url>
-            <loc>http://localhost:1313/junior-engineers-learning-journal/en/tags/emoji/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://localhost:1313/junior-engineers-learning-journal/en/categories/documentation/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>http://localhost:1313/junior-engineers-learning-journal/en/tags/emoji/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>http://localhost:1313/junior-engineers-learning-journal/en/categories/documentation/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
                         rel="alternate"
                         hreflang="ja"
                         href="http://localhost:1313/junior-engineers-learning-journal/categories/documentation/"
