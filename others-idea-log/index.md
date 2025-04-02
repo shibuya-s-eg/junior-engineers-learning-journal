@@ -123,9 +123,11 @@
         * Keep-Alive
         * キャッシュコントロール
         * トランザクション認証
+            * これって同じ秘密鍵的なものをサーバでも持っている感じ?
 
 * 無線LANセキュリティ
     * WPA3
+    * WPA2 Enteprise, Personal
     * Enhanced Open
     * EAP
         * MD5
@@ -133,6 +135,10 @@
         * TTLS
         * TOPTP
         * PEAP
+    * ジャミング攻撃
+    * 隠れ端末問題:https://xtech.nikkei.com/atcl/nxt/column/18/00247/041000003/
+        * 他のキャリアを見つけられない
+        * そもそものCSMA/CAは
 
 * セキュリティ団体
     * CRYPTOREC
@@ -147,11 +153,14 @@
     * http post flood
     * ボットネット
     * optimisticack, duplicate ack, partial ack: firewallとかの送信順序をどうこうするやつ
+    * smurf攻撃
+    * メールボム
 
 
 * DNS
     * CAAレコード
     * RSIGレコード
+    * SPFレコード
     * DNS SEC
     * TSIG
     * カミンスキー攻撃
@@ -160,6 +169,8 @@
     * DNSアンプ攻撃
     * DNSリフレクタ攻撃
     * DNSSECは権威DNSとキャッシュDNSの間、クライアントとの間はdns over tlsとか
+    * キャッシュポイズニングとID的なやつ
+    * ポートランダマイゼーション　
 
 * メール
     * PGP
@@ -220,6 +231,7 @@
         * 基本評価基準
         * 現状評価基準
 
+* SOAP
 
 * HMAC, ブラウザやJWT
 
