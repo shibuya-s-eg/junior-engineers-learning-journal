@@ -23,9 +23,9 @@ lightgallery: true
 
 ## TL;DR
 
-*
-*
-*
+* Linuxの権限管理の基本を復習
+* capabilityを利用することで最小権限の原則に従える
+* SELinuxを利用すれば、権限分掌が可能
 
 
 ## 0　はじめに
@@ -265,7 +265,6 @@ uid, gidはユーザやグループのための一意の識別子です。
 書き込み権限とは異なるのでしょうか？
 
 ファイルの削除に必要な権限は**ファイルが置かれたディレクトリの書き込み権限と実行権限があるか**です。
-{{< image src="access-rights-vs-stickeybit.png" width="400px" height="300px" caption="アクセス権とスティッキービット" >}}
 
 {{< /admonition >}}
 
@@ -542,20 +541,12 @@ struct ext4_inode {
 VFSがもつ"struct inode"とファイルシステムのinodeの関係としては、VFSの"struct inode"がファイルシステムのinodeから情報を取得する感じです。
 これにより、カーネルくんはVFSの"struct inode"への統一的なアクセスが可能となります。
 
-他のスーパーブロックなども同じような関係がありますが、ファイルシステムについての別記事で詳しく書こうと思います。
+ここで、"struct inode"はアクセス権限を"imode"として持っています。
+ファイルへアクセスする際はこの"imode"の情報を利用し、マスクをかけることで権限のチェックを行っているのです！
 
-### 2.3　ファイル操作の流れ
+他にもスーパーブロックなど様々な話がありますが、ファイルシステムについての別記事で詳しく書こうと思います。
 
-app - syscall -> vfs -fs_call-> fs
-strace
-cat,lsあたりのシステムコール
-
-1.4節で説明したsetuidについてですが、便利な反面、バグや設計ミスがあると権限昇格に利用される恐れがあり非常に危険な存在です。
-そこで、linux2.2から取り入れられたcapabilityについて見ていきます。
-
-まずは、現在のpingのパミッションを見ていきましょう。(最悪、自分でcapabilityのものを作る必要がある)
-
-## 2.4　カーネルの権限管理
+## 2.3　カーネルの権限管理
 
 1.2でsetuidの危険性について説明しました。
 同時に、setuidの必要性についても説明しました。
@@ -564,46 +555,104 @@ cat,lsあたりのシステムコール
 
 本説では*capability*について説明します。
 
-前提としてLinux上のファイルなどオブジェクトに対するアクセス制御は、一般的には以下の2種類があります。
+2.1, 2.2ではinodeについて説明しました。
+inodeではimodeで権限情報を持っています。
+ここで説明するcapabilityや3章で説明するaclは拡張領域を利用してより細かい権限管理を行います。
 
->任意アクセス制御（DAC：Discretionary Access Control）
->ファイルパーミッションを基本とし、オブジェクトのアクセス権を所有者、グループ、その他に分類してアクセス可能なユーザーを制限
->アクセス制御リスト（ACL：Access Control List）を用いて、特定のユーザーやグループなどに対するACLを設定
->強制アクセス制御（MAC：Mandatory Access Control）
->任意アクセス制御より細かなアクセス制御設定が可能
->SELinux/AppArmor/SmackなどセキュアOSで実現
->Linuxのcapabilityは、ファイルやプロセスなどのリソースに対して付与される権限の組み合わせを指します。
->
->従来のUNIX実装では、パーミッションチェックを実行するために、特権プロセス（実効ユーザーIDが0）と、非特権プロセス（実効UIDが0以外）に大別できます。特権プロセスはすべてのカーネル許可チェックをバイパスしますが、非特権プロセスはプロセスの資格情報に基づいて認可を受けます。
->
->Linux2.2以降、Linuxは従来スーパーユーザーに関連付けられていた特権を、機能と呼ばれる個別の単位に分割し、個別に有効化および無効化できます。機能はスレッドごとの属性です。
->
->ファイル機能により、ユーザーはより高い権限でプログラムを実行できます。これは、ビットの動作に似ています。スレッド機能は、実行中のプログラム機能の現在の状態を追跡します。
->
->従ってcapabilityを使用することで、rootユーザーを使用することなく、RAWソケットを使用するなどの特権操作が実行できます。
+capabilitiesについてマニュアルでは以下のように書かれています。
 
+> For the purpose of performing permission checks, traditional UNIX
+> implementations distinguish two categories of processes:
+> privileged processes (whose effective user ID is 0, referred to as
+> superuser or root), and unprivileged processes (whose effective
+> UID is nonzero).  Privileged processes bypass all kernel
+> permission checks, while unprivileged processes are subject to
+> full permission checking based on the process's credentials
+> (usually: effective UID, effective GID, and supplementary group
+> list).
+>
+> Starting with Linux 2.2, Linux divides the privileges
+> traditionally associated with superuser into distinct units, known
+> as capabilities, which can be independently enabled and disabled.
+> Capabilities are a per-thread attribute.
 
+[capabilities(7) — Linux manual page](https://man7.org/linux/man-pages/man7/capabilities.7.html)
+
+capabilityは従来のルート権限を分割したものです。
+ルート権限という強く広い権限を与えるではなく、capabilityによる一部の強い権限を与えることにより、最小権限の原則に従うことができます。
+
+実際に例を見てみましょう。以下はubuntuにもともと入っている"ping"です。
 
 {{< image src="ppping.png" width="800px" height="600px" caption="pingの権限" >}}
+
+特にsetuidが付与されているわけでもなく、一般ユーザとして実行できるように見えます。
+実際に、pingは一般ユーザでも実行できると思います。
+
+では、このコマンドを自分のものとしてコピーして実行してみましょう。
+一般ユーザとして実行できているファイルなので、コピーができれば問題なく動作するはずです。
+
+{{< image src="ping_caps_error.png" width="800px" height="600px" caption="ソケットエラー" >}}
+
+エラーになりました。
+ローソケットの操作が許可されていないと怒られており、"capability"か"setuid"がないと言われています。
+
+これは、"ping"がローソケットを利用しており、その権限がないためエラーが出ているのです。
+では、もともと入っていた"ping"を見てみましょう。
+
 {{< image src="ping_caps.png" width="800px" height="600px" caption="pingのcapability" >}}
-{{< image src="ping_caps_error.png" width="800px" height="600px" caption="caps" >}}
-capability, getcap, getpcaps
-カーネルパラメータ
+
+"cap_net_raw=ep"とあり、ローソケットを利用するためのcapabilityが割り当てられていることが分かります。\
+※ e=Effectve, p=Permitted を意味してます。
+
+これにより、setuidを利用せずにローソケットの利用しており、pingに脆弱性があったとしても権限昇格などの危険性が緩和されます。
 
 ## 3　その他のアクセス制御
 
-* facl
-* selinux
+### acl
+
+aclはこれまでの1章で復習した標準の権限管理より細かいアクセス制御を実現できます。
+具体的には、「その他のユーザーが」ではなく、「誰が」を設定できます。
+
+{{< image src="facl.png" width="800px" height="600px" caption="aclのインストール" >}}
+
+標準ではaclが入っていなかったのでインスールしました。
+
+実際に使ってみましょう。
+
+{{< image src="setfacl.png" width="800px" height="600px" caption="aclの設定" >}}
+
+"root_secret.txt"にユーザ"hoge"だけ読み込みと書き込みができるように設定しました。
+
+### SELinux
+
+Linuxのアクセス制御は、以下の2種類があります。
+* 任意アクセス制御
+* 強制アクセス制御
+
+これまで紹介してきたものはすべて任意アクセス制御です。
+"selinux"は強制アクセス制御に分類されます。
+
+> SELinux (Security-Enhanced Linux) は、システムにアクセスできるユーザーを管理者がよりきめ細かく制御するための、Linux® システム向けセキュリティ・アーキテクチャです。もともとは、Linux Security Modules (LSM) を使用した Linux カーネルへの一連のパッチとして、アメリカ国家安全保障局 (NSA) によって開発されました。
+
+[SELinux (Security-Enhanced Linux) とは](https://www.redhat.com/ja/topics/linux/what-is-selinux)
+
+SELinuxもcapabilityやaclのように標準的な権限管理より細かい設定が可能です。
+任意アクセス制御と最も異なる点は、「rootであっても、すべてを自由に操作できるとは限らない」ことです。
+すなわち、rootという中央集権を排除し、**権限分掌**を行うことができます。
+
+SELinuxについては、深く学びたいので別の記事で個別に深堀ることとします。
+
 
 ## 4　まとめ
 
+今回はLinuxのアクセス制御について学習しました。
+capabilityやSELinuxを利用することで、より細かい制御を行うことができ、最小権限の原則を実現できます。
+実際のユースケースまで見えていない部分があるので、追って勉強しようと思います。
 
-ファイルパミッションの基本、setuid, setgid, そもそものuid, gid, すべてファイルである, コピー時の動作、ファイル管理のビット列、
-strace, getpcaps, capability, getcap, カーネルパラメータ、権限昇格、facl
 
 
 ## 参考
 
-[1] [ClamAV](https://www.synology.com/)
-[2] [WIKIPEDIA Antivirus software](https://en.wikipedia.org/wiki/Antivirus_software)
-[3] [Trellix 脅威対策の主な内容]（https://docs.trellix.com/ja-JP/bundle/endpoint-security-10.6.0-threat-prevention-product-guide-windows/page/GUID-7939E36B-8FC4-42F4-BE70-46AB2B9B0954.html）
+[1] []()
+[2] []()
+[3] []()
