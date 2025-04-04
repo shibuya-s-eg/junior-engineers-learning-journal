@@ -10,7 +10,7 @@
     <pubDate>Thu, 20 Mar 2025 00:00:00 &#43;0900</pubDate>
     <author>しぶや</author>
     <guid>http://localhost:1313/junior-engineers-learning-journal/os-linux-access-controle/</guid>
-    <description><![CDATA[こんにちは、しぶやです。 Linuxのアクセス制御の理解がかなり浅いと気づいたので、これを機にLinuxのアクセス制御を「完全に理解」していき]]></description>
+    <description><![CDATA[こんにちは、しぶやです。 今回はLinuxのアクセス制御を「完全に理解」していきたいと思います。 TL;DR 0 はじめに Linuxに限った話ではないですが]]></description>
 </item>
 <item>
     <title>ClamAVを完全に理解する</title>
