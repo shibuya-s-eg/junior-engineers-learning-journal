@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "dark.min.css",
-	"sourceRoot": "/home/runner/work/junior-engineers-learning-journal/junior-engineers-learning-journal",
+	"sourceRoot": "/home/shibuya/junior-engineers-learning-journal",
 	"sources": [
 		"themes/LoveIt/assets/lib/aplayer/dark.scss"
 	],
