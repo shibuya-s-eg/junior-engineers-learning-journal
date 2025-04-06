@@ -515,7 +515,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   [params.analytics]
     # Google Analytics
     [params.analytics.google]
-      id = ""
+      id = "G-H5XL7WSZGZ"
       # whether to respect the browser’s “do not track” setting
       respectDoNotTrack = false
     # Fathom Analytics
