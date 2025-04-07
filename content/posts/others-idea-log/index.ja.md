@@ -63,6 +63,8 @@ lightgallery: true
     * CIA：済
     * 付加的な特性：済
 
+* NDA
+
 * 制度/フレームワーク/ガイドライン
     * ISMS
         * 27000シリーズ
@@ -75,6 +77,10 @@ lightgallery: true
         * 15001
         * 27014
     * ISMAP
+        * ismap liu
+    * NIST ZTA
+    * ZTNA
+        * SDPコントローラ
     * SOC保証制度
     * SIM3
     * cmmc
@@ -90,10 +96,31 @@ lightgallery: true
     * NIST サイバーセキュリティフレームワーク
     * コンピュータセキュリティインシデントガイド
     * 証拠保全のやつ
-
+    * STIX
+        * サイバー攻撃活動
+        * 攻撃者
+        * 攻撃手口
+        * 検知指標
+        * 観測事象
+        * インシデント
+        * 対処措置
+        * 攻撃対象
 
 * セキュリティソリューション
     * CASB
+    * sase
+        * SD-WAN
+        * SWG
+        * FWAAS
+        * ZTNA
+        * RBI
+        * CASB
+        * CSPM
+        * DLP
+        * UEBA
+
+* 非機能
+    * キャパシティ管理
 
 * 開発手法
     * ウォークスルー
@@ -140,6 +167,22 @@ lightgallery: true
         * キャッシュコントロール
         * トランザクション認証
             * これって同じ秘密鍵的なものをサーバでも持っている感じ?
+        * X XSS Protection
+        * Client Security Policy
+        * Chache Controle: no chacheとか
+        * セッションフィくせーション
+        * cookie monster bug
+        * domain属性
+        * url rewriting
+        * ドメインフロンティング
+        * 2.8.1
+        * content ecurity policy
+        * traceメソッド
+        * クリックジャッキング, samesite
+        * 2.8
+        * x frame option
+
+
 
 * 無線LANセキュリティ
     * WPA3
@@ -163,6 +206,11 @@ lightgallery: true
         * NOTICE
         * 総合テストベッド
     * IPA
+    * NISC
+    * JCSIP
+    * JPCERT/CC
+    * 経済産業省
+    * セプターカウンシル
 
 * DoS
     * synflood
@@ -172,9 +220,27 @@ lightgallery: true
     * smurf攻撃
     * メールボム
 
+* NMAP
+    * ステルススキャン
+
+* BOF
+    * DEP
+        * return-to-libc
+    * アドレス空間ランダム化
+    * PIE
+    * 整数オーバーフロー
+    * BOFの仕組み
+    * stack guard
+    * ssp
+    * カナリア
+    * automatic fotification
+
+* ルートキット
+
 
 * DNS
     * CAAレコード
+        * この意味
     * RSIGレコード
     * SPFレコード
     * DNS SEC
@@ -187,6 +253,13 @@ lightgallery: true
     * DNSSECは権威DNSとキャッシュDNSの間、クライアントとの間はdns over tlsとか
     * キャッシュポイズニングとID的なやつ
     * ポートランダマイゼーション　
+    * 2.6.1
+    * ファーミング
+    * DNSアンプ
+        * キャッシュサーバ公開しない
+        * どうやってレスをでかくする？
+    * DNSトンネリング
+
 
 * メール
     * PGP
@@ -203,6 +276,10 @@ lightgallery: true
     * フィッシングについて考える
     * mxレコードとaレコードがどう利用されているのか
     * 中継するサーバは受信者と送信者のもののみなのか。パブリックな中継がある？
+
+* mtm
+    * arpスプーフィング
+    * tcp, udp, web, 認証
 
 
 * Cookie
@@ -229,6 +306,15 @@ lightgallery: true
     * ロックアウト
     * リスクベース
     * JWT?
+    * CHAPリプレイ攻撃、なりすまし
+    * レインボーテーブル、ソルト
+    * パスワードスプレー
+    * パスワードリスト
+    * クレデンシャルスタッフィング攻撃
+    * pass tha hash
+    * ケルベロス認証
+    * s/key
+
 
 * 暗号
     * FIPS
