@@ -70,6 +70,7 @@ lightgallery: true
         * 27000シリーズ
         * 27001
         * 27002
+        * 27017
         * 27018
         * クラウドセキュリティ認証
     * JIS Q
@@ -78,6 +79,13 @@ lightgallery: true
         * 27014
     * ISMAP
         * ismap liu
+        * SP800-53を参照
+    * 防衛産業サイバーセキュリティ基準
+        * 能動的サイバー防御
+    * ISMS適合性評価制度
+        * 範囲はISMS適用範囲定義書
+    * ISMSクラウドセキュリティ認証
+    * AI事業者ガイドライン
     * NIST ZTA
     * ZTNA
         * SDPコントローラ
@@ -105,6 +113,8 @@ lightgallery: true
         * インシデント
         * 対処措置
         * 攻撃対象
+    * 内部不正ガイドライン
+    * 電子商取引及び情報財取引等に関する準則
 
 * セキュリティソリューション
     * CASB
@@ -118,6 +128,9 @@ lightgallery: true
         * CSPM
         * DLP
         * UEBA
+    * CAASM
+    * NIST SP800 207
+    * 拡張ゼロトラスト
 
 * 非機能
     * キャパシティ管理
@@ -149,15 +162,40 @@ lightgallery: true
     * 電力解析攻撃
     * 破壊攻撃
 
+* AIへの攻撃
+
+* IoT
+    * タイポスワっティング
+    * ホモグラフ攻撃
+    * 好き民具
+    * 電磁シールド
+    * ステガノグラフィ
+    * テンペスト攻撃
+    * wi-peep
+
 * Webセキュリティ
     * 攻撃
+        * SQLインジェクション
         * クロスサイトスクリプティング
         * クロスサイトリクエストフォージェリ
         * HTTPヘッダインジョクション
+        * メールヘッダインジェクション
+        * ディレクトリトラバーサル
+        * サーバーサイドリクエストフォージェリ
         * OSコマンドインジェクション
         * セッションハイジャック
         * マンインサミドル
         * Pass The Hash
+        * rat
+        * MITM
+            * トランザクション署名
+        * モバイルコード
+        * 水飲み場攻撃
+        * emotet
+        * monero
+        * LOTL
+        * ｸｲｯｼﾝｸﾞ
+
     * 防御
         * CSRFトークン
         * samesite属性
@@ -179,9 +217,34 @@ lightgallery: true
         * content ecurity policy
         * traceメソッド
         * クリックジャッキング, samesite
-        * 2.8
         * x frame option
+        * PUA
 
+
+* IRC
+* 3-2-1ルール
+* マルウェア検知手法
+* ct,  security.txt
+* ACME, SCEP
+* IRR
+* RPKI
+* ROA
+* ROV
+* rootでログインさせるとだれが使ったのか分からない。
+* IPHNEはMACアドレス地をランダム化させているらしい
+* JC-STAR
+* NPU
+
+
+* 自動車
+    * 自動車の情報セキュリティへの取り組みガイド
+    * misra c
+    * misra c++
+    * obd2
+    * CAN
+    * 車載イーサネット
+    * SOM/IP
+    * DOIP
 
 
 * 無線LANセキュリティ
@@ -198,6 +261,12 @@ lightgallery: true
     * 隠れ端末問題:https://xtech.nikkei.com/atcl/nxt/column/18/00247/041000003/
         * 他のキャリアを見つけられない
         * そもそものCSMA/CAは
+    * wpa2とwpa3の違い
+    * wifi dpp
+    * sae
+    * iphoneのMACアドレスランダム化
+    * OpenRoaming
+        * eduroam
 
 * セキュリティ団体
     * CRYPTOREC
@@ -259,6 +328,10 @@ lightgallery: true
         * キャッシュサーバ公開しない
         * どうやってレスをでかくする？
     * DNSトンネリング
+    * 権威DNSも返してくれるけどrecursion noなので、再起問い合わせしてくれない
+    * FAST FLUX
+    * Domain flux
+    * IDNA
 
 
 * メール
@@ -286,9 +359,14 @@ lightgallery: true
 * PKI
     * X509
     * OCSP
+    * SCVP
+        * 認証局側に訪問がばれる
     * CRL
     * XMLデジタル署名
     * CP, CPS
+    * dv, ev, ov: 1年間
+        * 1年間
+        * Let's Encryptoはdvでありcnのみ
 
 * 認証基礎
     * SAML
@@ -314,7 +392,41 @@ lightgallery: true
     * pass tha hash
     * ケルベロス認証
     * s/key
+    * パスキー
+    * IDaaS
+        * idパスワードはネットワークに流さない。
+    * reflesh token
+    * SCIM
+    * OIDC
+        * samlにはないがodicにはユーザからの同意を得る手順がある
+    * SMS認証
+        * 課金
+        * 拒否
+        * SIMスワップ
+    * バイオメトリクス認証
+        * 本人拒否率
+        * 他人受け入れ率
+        * 代替手段が必要
+        * 問題点
+    * バイオメトリクス認証
+        * 本人拒否率
+        * 他人受け入れ率
+        * マスターフェイス
+        * ウルフ攻撃
+    * EKYCのライブネスチェック
+    * ハードウェアトークン
+    * JWT
+    * CSMS認証
+    * 認証局のかい総合像
+    * ISO 42001
+    * ジョーアカウント
 
+
+* FAPI
+* FAPI 2.0
+    * HOK
+    * MTLS
+    * DPOP
 
 * 暗号
     * FIPS
@@ -326,6 +438,28 @@ lightgallery: true
         * 暗号化
         * 改ざん防止
         * サーバ証明
+    * 楕円曲線はリソース低い
+    * 耐量子暗号
+    * 量子鍵配送
+    * 楕円極性
+        * ed25519
+    * モスカの定理
+    * 講師暗号
+    * ショアのアルゴリズム
+    * 秘密計算
+    * 準同型暗号
+    * 秘密分散
+    * ハイブリット
+    * しきい値秘密分散
+        * チェックサムっぽい
+    * MD5
+        * 衝突
+    * MAC
+    * HMAC
+    * CMAC
+    * ゼロ知識証明
+        * CHAP
+
 
 
 * 脆弱性
