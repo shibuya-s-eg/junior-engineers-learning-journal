@@ -5,9 +5,9 @@
     <div class="page single special">
 
         {{- /* DRAFT ラベル表示 */ -}}
-        {{- if and .Draft $params.showDraft }}
+        {{- if and .Draft site.Params.page.showDraft }}
             <div style="color: red; font-weight: bold; font-size: 1.2em; margin-bottom: 1rem;">DRAFT</div>
-        {{- end }}
+        {{- end -}}
 
         {{- /* Title */ -}}
         <h1 class="single-title animate__animated animate__pulse animate__faster">
