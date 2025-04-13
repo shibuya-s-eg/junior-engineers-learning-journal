@@ -4,15 +4,14 @@
     {{- $params := .Scratch.Get "params" -}}
     <div class="page single special">
 
-        {{- /* DRAFT ラベル表示 */ -}}
-        {{- if and .Draft site.Params.page.showDraft }}
-            <div style="color: red; font-weight: bold; font-size: 1.2em; margin-bottom: 1rem;">DRAFT</div>
-        {{- end -}}
-
         {{- /* Title */ -}}
         <h1 class="single-title animate__animated animate__pulse animate__faster">
             {{- .Title -}}
         </h1>
+
+        {{- if .Draft }}
+            <p><span class="badge badge-warning">Draft</span></p>
+        {{- end }}
 
         {{- /* Subtitle */ -}}
         {{- with $params.subtitle -}}

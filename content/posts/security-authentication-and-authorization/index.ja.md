@@ -1,0 +1,105 @@
+---
+weight: 4
+title: "認証/認可を完全に理解する"
+date: 2025-04-13T00:00:00+09:00
+lastmod: 2025-04-13T00:00:00+09:00
+draft: true
+author: "しぶや"
+authorLink: "https://github.com/shibuya-s-eg"
+description: "認証/認可を完全に理解する"
+images: []
+resources:
+- name: "featured-image"
+  src: "featured-image.png"
+
+tags: ["Security"]
+categories: ["Security"]
+
+lightgallery: true
+---
+
+<!--
+Todo:
+- TLDR
+
+-->
+
+* 認証基礎
+    * SAML
+    * OAuth
+    * OpenID
+    * Pass The Hash
+    * Cookie認証
+    * Kerberos認証
+    * リバースプロキシ型認証
+    * FIDO
+        * UAF
+        * CATP 1
+        * CATP 2
+    * CAPTHA
+    * ロックアウト
+    * リスクベース
+    * JWT?
+    * CHAPリプレイ攻撃、なりすまし
+    * レインボーテーブル、ソルト
+    * パスワードスプレー
+    * パスワードリスト
+    * クレデンシャルスタッフィング攻撃
+    * pass tha hash
+    * ケルベロス認証
+    * s/key
+    * パスキー
+    * IDaaS
+        * idパスワードはネットワークに流さない。
+    * reflesh token
+    * SCIM
+    * OIDC
+        * samlにはないがodicにはユーザからの同意を得る手順がある
+    * SMS認証
+        * 課金
+        * 拒否
+        * SIMスワップ
+    * バイオメトリクス認証
+        * 本人拒否率
+        * 他人受け入れ率
+        * 代替手段が必要
+        * 問題点
+    * バイオメトリクス認証
+        * 本人拒否率
+        * 他人受け入れ率
+        * マスターフェイス
+        * ウルフ攻撃
+    * ekyc
+        * EKYCのライブネスチェック
+        * 犯収法
+            * 顧客の指名・住所・生年月日などの「本人特定事項」や「取引を行う目的」
+        * ホ方式、ワ方式
+        * ディープフェイク
+    * ハードウェアトークン
+    * JWT
+    * CSMS認証
+    * 認証局のかい総合像
+    * ISO 42001
+    * ジョーアカウント
+
+
+
+こんにちは、しぶやです。
+今回はを完全に理解していきます。
+
+
+## TL;DR
+
+*
+*
+*
+
+## 1　hoge
+
+### 1.1　hoge
+
+
+
+## 参考
+
+[1] []()
