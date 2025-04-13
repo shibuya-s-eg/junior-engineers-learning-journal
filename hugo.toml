@@ -298,6 +298,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   # Page global config
   [params.page]
     dateFormat = "2025-01-01"
+    showDraft = true
     # whether to hide a page from home page
     hiddenFromHomePage = false
     # whether to hide a page from search results
