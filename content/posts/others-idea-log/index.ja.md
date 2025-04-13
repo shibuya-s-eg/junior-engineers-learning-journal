@@ -100,6 +100,8 @@ lightgallery: true
     * SCAP
     * SOAR
     * サイバーキルチェーン
+        * 偵察
+        * 武器化
     * MITER
     * NIST サイバーセキュリティフレームワーク
     * コンピュータセキュリティインシデントガイド
@@ -115,6 +117,11 @@ lightgallery: true
         * 攻撃対象
     * 内部不正ガイドライン
     * 電子商取引及び情報財取引等に関する準則
+    * JIPDEC
+    * JCMVP
+    * ウィーケストリンクモデル
+        * ドベネックの桶
+    * ISO/IEC 15408
 
 * セキュリティソリューション
     * CASB
@@ -219,11 +226,13 @@ lightgallery: true
         * クリックジャッキング, samesite
         * x frame option
         * PUA
+        * ゾーニング
 
 
 * IRC
 * 3-2-1ルール
 * マルウェア検知手法
+* ノーウェアランサム
 * ct,  security.txt
 * ACME, SCEP
 * IRR
@@ -234,6 +243,12 @@ lightgallery: true
 * IPHNEはMACアドレス地をランダム化させているらしい
 * JC-STAR
 * NPU
+* インシデント対応
+    * BCP
+    * BCM
+    * IRP
+    * コンティンジェンシープラン
+    * ディザスタリカバリ
 
 
 * 自動車
@@ -278,6 +293,7 @@ lightgallery: true
     * NISC
     * JCSIP
     * JPCERT/CC
+    * FIRST
     * 経済産業省
     * セプターカウンシル
 
@@ -413,7 +429,12 @@ lightgallery: true
         * 他人受け入れ率
         * マスターフェイス
         * ウルフ攻撃
-    * EKYCのライブネスチェック
+    * ekyc
+        * EKYCのライブネスチェック
+        * 犯収法
+            * 顧客の指名・住所・生年月日などの「本人特定事項」や「取引を行う目的」
+        * ホ方式、ワ方式
+        * ディープフェイク
     * ハードウェアトークン
     * JWT
     * CSMS認証
@@ -466,6 +487,9 @@ lightgallery: true
     * CVSS
         * 基本評価基準
         * 現状評価基準
+        * 脅威
+        * CVSS-〇〇
+    * SSVC
 
 * SOAP
 

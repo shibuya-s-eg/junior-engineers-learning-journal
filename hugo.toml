@@ -6,7 +6,7 @@ theme = "LoveIt"
 #themesDir = "theme"
 
 # website title
-title = "LoveIt"
+title = "junior-engineers-learning-journal"
 
 # determines default content language ["en", "zh-cn", "fr", "pl", ...]
 defaultContentLanguage = "ja"
@@ -17,6 +17,8 @@ languageName = "日本語"
 # whether to include Chinese/Japanese/Korean
 hasCJKLanguage = true
 enableLangChange = true
+
+timeZone = "Asia/Tokyo"
 
 # copyright description used only for seo schema
 copyright = ""
@@ -76,7 +78,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   # ["sha256", "sha384", "sha512", "md5"]
   fingerprint = ""
   # date format
-  dateFormat = "2025-01-01"
+  dateFormat = "2006-01-02"
   # website title for Open Graph and Twitter Cards
   title = "駆け出しエンジニアの学習記録"
   # website description for RSS, SEO, Open Graph and Twitter Cards
@@ -133,7 +135,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     # special amount of posts in each section page
     paginate = 20
     # date format (month and day)
-    dateFormat = "01-02"
+    dateFormat = "2006-01-02"
     # amount of RSS pages
     rss = 10
 
@@ -142,7 +144,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     # special amount of posts in each list page
     paginate = 20
     # date format (month and day)
-    dateFormat = "01-02"
+    dateFormat = "2006-01-02"
     # amount of RSS pages
     rss = 10
 
@@ -295,6 +297,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 
   # Page global config
   [params.page]
+    dateFormat = "2025-01-01"
     # whether to hide a page from home page
     hiddenFromHomePage = false
     # whether to hide a page from search results

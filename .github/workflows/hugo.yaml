@@ -29,7 +29,7 @@ jobs:
 
       - name: Hugo でサイトをビルド
         run: |
-          hugo --gc --minify  # キャッシュをクリアしてからビルド
+          hugo --buildDrafts --gc --minify  # キャッシュをクリアしてからビルド
 
       - name: GitHub Pages にデプロイ
         uses: peaceiris/actions-gh-pages@v4

@@ -3,7 +3,7 @@ weight: 4
 title: "セキュリティの基本の基本"
 date: 2025-03-18T00:00:00+09:00
 lastmod: 2025-03-18T00:00:00+09:00
-draft: false
+draft: true
 author: "しぶや"
 authorLink: "https://github.com/shibuya-s-eg"
 description: "セキュリティの基本の基本"
@@ -17,6 +17,12 @@ categories: ["Security"]
 
 lightgallery: true
 ---
+
+<!--
+Todo:
+- TLDR
+
+-->
 
 こんにちは、しぶやです。
 今回はセキュリティの基本の基本をまとめます。

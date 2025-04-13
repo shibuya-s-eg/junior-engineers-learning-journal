@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>All Posts - LoveIt</title>
+        <title>All Posts - junior-engineers-learning-journal</title>
         <link>http://localhost:1313/junior-engineers-learning-journal/posts/</link>
-        <description>All Posts | LoveIt</description>
+        <description>All Posts | junior-engineers-learning-journal</description>
         <generator>Hugo -- gohugo.io</generator><language>ja</language><managingEditor>shibuya.s.eg@gmail.com (shibuya.s.eg@gmail.com)</managingEditor>
             <webMaster>shibuya.s.eg@gmail.com (shibuya.s.eg@gmail.com)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 20 Mar 2025 00:00:00 &#43;0900</lastBuildDate><atom:link href="http://localhost:1313/junior-engineers-learning-journal/posts/" rel="self" type="application/rss+xml" /><item>
     <title>Linuxのアクセス制御を完全に理解する</title>
@@ -27,6 +27,22 @@
     <author>しぶや</author>
     <guid>http://localhost:1313/junior-engineers-learning-journal/virtualization-docker/</guid>
     <description><![CDATA[こんにちは、しぶやです。 学生時代の研究から始まり、社会人になってからも愛用しているDockerについて、気合をいれてまとめようと思います。 TL;DR]]></description>
+</item>
+<item>
+    <title>セキュリティの基本の基本</title>
+    <link>http://localhost:1313/junior-engineers-learning-journal/security-very-basics/</link>
+    <pubDate>Tue, 18 Mar 2025 00:00:00 &#43;0900</pubDate>
+    <author>しぶや</author>
+    <guid>http://localhost:1313/junior-engineers-learning-journal/security-very-basics/</guid>
+    <description><![CDATA[こんにちは、しぶやです。 今回はセキュリティの基本の基本をまとめます。 話の流れは意識せず、思いつくものをつらつら書いていこうと思います。 TL;DR 1 セ]]></description>
+</item>
+<item>
+    <title>制度/フレームワーク/ガイドライン</title>
+    <link>http://localhost:1313/junior-engineers-learning-journal/security-system-framework-guidline/</link>
+    <pubDate>Tue, 18 Mar 2025 00:00:00 &#43;0900</pubDate>
+    <author>しぶや</author>
+    <guid>http://localhost:1313/junior-engineers-learning-journal/security-system-framework-guidline/</guid>
+    <description><![CDATA[こんにちは、しぶやです。 今回はセキュリティに関する制度やフレームワーク、ガイドラインについてまとめていこうと思います。 ストーリーは気にせずに]]></description>
 </item>
 <item>
     <title>NASを完全に理解する</title>

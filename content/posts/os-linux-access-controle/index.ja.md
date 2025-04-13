@@ -3,7 +3,7 @@ weight: 4
 title: "Linuxのアクセス制御を完全に理解する"
 date: 2025-03-20T00:00:00+09:00
 lastmod: 2025-03-20T00:00:00+09:00
-draft: false
+draft: true
 author: "しぶや"
 authorLink: "https://github.com/shibuya-s-eg"
 description: "Linuxのアクセス制御を完全に理解する。"
@@ -17,6 +17,16 @@ categories: ["OS"]
 
 lightgallery: true
 ---
+
+<!--
+Todo:
+- ユースケース
+    - nginxをcapabilityで動かす
+- Docker
+    - 結局Dockerが最適じゃね？
+- 参考
+-->
+
 
 こんにちは、しぶやです。\
 今回はLinuxのアクセス制御を「完全に理解」していきたいと思います。
@@ -342,6 +352,7 @@ sudoの管理を行っているのは"/etc/sudoers"です。実際に見てみ�
 ## 2　Linuxにおけるアクセス制御の深堀
 
 それではディープダイブしていきましょう。
+そもそもLinuxカーネルくんは、どこでファイルのパミッションを管理し、ファイルアクセスをしているのでしょうか？
 
 ### 2.1　ファイルシステム
 

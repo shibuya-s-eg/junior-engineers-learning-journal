@@ -3,7 +3,7 @@ weight: 4
 title: "ClamAVを完全に理解する"
 date: 2025-03-18T00:00:00+09:00
 lastmod: 2025-03-18T00:00:00+09:00
-draft: false
+draft: true
 author: "しぶや"
 authorLink: "https://github.com/shibuya-s-eg"
 description: "ClamAVを完全に理解する。"
@@ -17,6 +17,15 @@ categories: ["Security"]
 
 lightgallery: true
 ---
+
+<!--
+Todo:
+- ウイルス定義ファイル
+    - 実際に書いてみる
+- 標的型とかは検知が難しい話
+    - 書き換えられる
+    - 回避しようとしてくる
+-->
 
 こんにちは、しぶやです。\
 近いうちにClamAVを利用する機会がありそうなので、これを機にClamAVを「完全に理解」していきたいと思います。
