@@ -15,6 +15,14 @@
     <description><![CDATA[DNS CAAレコード この意味 RSIGレコード SPFレコード DNS SEC TSIG カミンスキー攻撃 SPF nslookup, digが行っていること。通信の中身 DNSアンプ攻撃 DNSリフ]]></description>
 </item>
 <item>
+    <title>HTTPを完全に理解する</title>
+    <link>http://localhost:1313/junior-engineers-learning-journal/application-http/</link>
+    <pubDate>Sun, 13 Apr 2025 00:00:00 &#43;0900</pubDate>
+    <author>しぶや</author>
+    <guid>http://localhost:1313/junior-engineers-learning-journal/application-http/</guid>
+    <description><![CDATA[こんにちは、しぶやです。 今回はを完全に理解していきます。 TL;DR 1 hoge 1.1 hoge 参考 [1]]]></description>
+</item>
+<item>
     <title>IPを完全に理解する</title>
     <link>http://localhost:1313/junior-engineers-learning-journal/network-ip/</link>
     <pubDate>Sun, 13 Apr 2025 00:00:00 &#43;0900</pubDate>
@@ -28,14 +36,6 @@
     <pubDate>Sun, 13 Apr 2025 00:00:00 &#43;0900</pubDate>
     <author>しぶや</author>
     <guid>http://localhost:1313/junior-engineers-learning-journal/network-tcp/</guid>
-    <description><![CDATA[こんにちは、しぶやです。 今回はを完全に理解していきます。 TL;DR 1 hoge 1.1 hoge 参考 [1]]]></description>
-</item>
-<item>
-    <title>TCPを完全に理解する</title>
-    <link>http://localhost:1313/junior-engineers-learning-journal/security-certificate-authority/</link>
-    <pubDate>Sun, 13 Apr 2025 00:00:00 &#43;0900</pubDate>
-    <author>しぶや</author>
-    <guid>http://localhost:1313/junior-engineers-learning-journal/security-certificate-authority/</guid>
     <description><![CDATA[こんにちは、しぶやです。 今回はを完全に理解していきます。 TL;DR 1 hoge 1.1 hoge 参考 [1]]]></description>
 </item>
 <item>
@@ -55,6 +55,22 @@
     <description><![CDATA[メール PGP M/MIME SMTP Auth SMTP 587 APOP POP3 IMAPS SMTP Submission OP25B IP25B メールの仕組み・構成 フィッシングについて考える mxレコードとaレコードがどう利用されているのか 中継するサーバ]]></description>
 </item>
 <item>
+    <title>セキュリティソリューションをまとめる</title>
+    <link>http://localhost:1313/junior-engineers-learning-journal/security-solution/</link>
+    <pubDate>Sun, 13 Apr 2025 00:00:00 &#43;0900</pubDate>
+    <author>しぶや</author>
+    <guid>http://localhost:1313/junior-engineers-learning-journal/security-solution/</guid>
+    <description><![CDATA[セキュリティソリューション CASB sase SD-WAN SWG FWAAS ZTNA RBI CASB CSPM DLP UEBA CAASM NIST SP800 207 拡張ゼロトラスト こんにちは、しぶやです。 今回はを完全に理解していきます。 TL;DR 1 hoge 1.1 hoge 参]]></description>
+</item>
+<item>
+    <title>セキュリティ組織をまとめる</title>
+    <link>http://localhost:1313/junior-engineers-learning-journal/security-organization/</link>
+    <pubDate>Sun, 13 Apr 2025 00:00:00 &#43;0900</pubDate>
+    <author>しぶや</author>
+    <guid>http://localhost:1313/junior-engineers-learning-journal/security-organization/</guid>
+    <description><![CDATA[セキュリティ団体 CRYPTOREC NICT ダイダロス NOTICE 総合テストベッド IPA NISC JCSIP JPCERT/CC FIRST 経済産業省 セプターカウンシル こんにちは、しぶやです。 今回はを完全に理解していきます]]></description>
+</item>
+<item>
     <title>暗号を完全に理解する</title>
     <link>http://localhost:1313/junior-engineers-learning-journal/security-cryptography/</link>
     <pubDate>Sun, 13 Apr 2025 00:00:00 &#43;0900</pubDate>
@@ -63,28 +79,12 @@
     <description><![CDATA[暗号 FIPS TLS1.3暗号スイート ハッシュ 衝突困難性 ブロック暗号 CTR TLSの役割 暗号化 改ざん防止 サーバ証明 楕円曲線はリソース低い 耐量子暗号 量子鍵配]]></description>
 </item>
 <item>
-    <title>自動車IoTを完全に理解する</title>
-    <link>http://localhost:1313/junior-engineers-learning-journal/iot-automotive-security/</link>
+    <title>開発手法をまとめる</title>
+    <link>http://localhost:1313/junior-engineers-learning-journal/others-development-method/</link>
     <pubDate>Sun, 13 Apr 2025 00:00:00 &#43;0900</pubDate>
     <author>しぶや</author>
-    <guid>http://localhost:1313/junior-engineers-learning-journal/iot-automotive-security/</guid>
-    <description><![CDATA[自動車 自動車の情報セキュリティへの取り組みガイド misra c misra c++ obd2 CAN 車載イーサネット SOM/IP DOIP こんにちは、しぶやです。 今回はを完全に理解していきます。 TL;DR 1]]></description>
-</item>
-<item>
-    <title>脆弱性を完全に理解する</title>
-    <link>http://localhost:1313/junior-engineers-learning-journal/security-vulnerability/</link>
-    <pubDate>Sun, 13 Apr 2025 00:00:00 &#43;0900</pubDate>
-    <author>しぶや</author>
-    <guid>http://localhost:1313/junior-engineers-learning-journal/security-vulnerability/</guid>
-    <description><![CDATA[脆弱性 CVSS 基本評価基準 現状評価基準 脅威 CVSS-〇〇 SSVC こんにちは、しぶやです。 今回はを完全に理解していきます。 TL;DR 1 hoge 1.1 hoge 参考 [1]]]></description>
-</item>
-<item>
-    <title>認証/認可を完全に理解する</title>
-    <link>http://localhost:1313/junior-engineers-learning-journal/security-authentication-and-authorization/</link>
-    <pubDate>Sun, 13 Apr 2025 00:00:00 &#43;0900</pubDate>
-    <author>しぶや</author>
-    <guid>http://localhost:1313/junior-engineers-learning-journal/security-authentication-and-authorization/</guid>
-    <description><![CDATA[認証基礎 SAML OAuth OpenID Pass The Hash Cookie認証 Kerberos認証 リバースプロキシ型認証 FIDO UAF CATP 1 CATP 2 CAPTHA ロックアウト リスクベース JWT? CHAPリプレイ攻撃、]]></description>
+    <guid>http://localhost:1313/junior-engineers-learning-journal/others-development-method/</guid>
+    <description><![CDATA[開発手法 ウォークスルー トップダウン ボトムアップ サンドイッチ 並行シミュレーション アジャイル ウォーターフォール テスト駆動開発 DEVOPS カオスエンジニアリ]]></description>
 </item>
 </channel>
 </rss>

@@ -1,19 +1,19 @@
 ---
 weight: 4
-title: "TCPを完全に理解する"
+title: "認証局を完全に理解する"
 date: 2025-04-13T00:00:00+09:00
 lastmod: 2025-04-13T00:00:00+09:00
 draft: true
 author: "しぶや"
 authorLink: "https://github.com/shibuya-s-eg"
-description: "TCPを完全に理解する"
+description: "認証局を完全に理解する"
 images: []
 resources:
 - name: "featured-image"
   src: "featured-image.png"
 
-tags: ["Network"]
-categories: ["Network"]
+tags: ["Security"]
+categories: ["Security"]
 
 lightgallery: true
 ---
@@ -36,9 +36,15 @@ Todo:
 *
 *
 
-## 1　hoge
+## 0　はじめに
 
-### 1.1　hoge
+## 1　PKI
+
+
+## 2　証明書
+
+
+## 3　実際の認証局
 
 
 
