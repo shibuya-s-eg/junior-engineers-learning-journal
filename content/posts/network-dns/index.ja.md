@@ -87,7 +87,7 @@ DNSとは何でしょうか？まずは定義を見てみましょう。
 
 ここで、Linuxでの名前解決を復習しましょう。Linuxではnsswitch.confで名前解決の優先度が記載されています。
 
-{{< image src="etc_passwd.png" width="800px" height="600px" caption="/etc/nsswitch.conf" >}}
+{{< image src="nsswitch-conf.png" width="800px" height="600px" caption="/etc/nsswitch.conf" >}}
 
 
 > hosts: files dns
@@ -129,7 +129,7 @@ DNSには大きく2つの種類があります。
 
 DNSの種類が分かったところで、世の中のDNSの動きを見てみたいと思います。
 
-{{< image src="etc_passwd.png" width="800px" height="600px" caption="DNSの動き" >}}
+{{< image src="resolv-conf.png" width="800px" height="600px" caption="/etc/resolv.conf" >}}
 
 上の図は実際に名前解決をする流れです。
 
@@ -237,16 +237,15 @@ DNSエリにはQuestionセクションというセクションがあり、その
 これにより、DNSは応答するレコードを判断しているのです。
 {{< /admonition >}}
 
-＊ TXTレコード
+* TXTレコード
 
 
-＊ SRVレコード
 
 * SPFレコード、DKIMレコード、DMARCレコード
 この辺りはメールの送信ドメイン認証のために使われるレコードです。DNSのレコードタイプとしてはTXTです。
 これらの詳細は「メールを完全に理解する」で確認しようと思います。今はテキストとしてメールのドメイン認証に使うレコードを持っているんだなくらいに思っておきましょう。
 
-＊ SOAレコード
+* SOAレコード
 
 >soaレコード
 >example.com. IN SOA ns1.example.com. hostmaster.example.com. (
@@ -270,6 +269,9 @@ SOAレコードはゾーンに必ずに一つだけ存在し、ゾーンに関�
 ＊ minimum ... キャッシュ最小TTL
 
 
+* SRVレコード
+* CAAレコード
+* RSIGレコード
 
 
 
@@ -288,7 +290,8 @@ SOAレコードはゾーンに必ずに一つだけ存在し、ゾーンに関�
 有名なレジストラとしては"お名前.com"などがありますね。
 以下はお名前.comでドメインを取得するときの画面です。
 
-お名前.comの写真
+
+{{< image src="onamaecom-domain.png" width="800px" height="600px" caption="お名前.comの写真" >}}
 
 このように、ドメイン名によっては無料で取得できるものも多くあります。アカウントさえ登録すれば、簡単にドメインを取得できます。
 
@@ -301,7 +304,8 @@ SOAレコードはゾーンに必ずに一つだけ存在し、ゾーンに関�
 他社のDNSにレコードを登録します。今回の例だと簡単なのはレジストラが提供しているDNSサーバを利用する方法です。
 以下がお名前.comのDNSサーバの登録画面です。
 
-お名前.comの登録画面
+{{< image src="onamaecom-dns.png" width="800px" height="600px" caption="お名前.comの登録画面" >}}
+
 
 レジストラが提供するDNSサーバ以外の例として、クラウドが提供するDNSサーバがあります。
 クラウドでWebサーバを構築している場合はそちらに登録するのが良いと思います。
@@ -317,7 +321,7 @@ DNSレコードの伝播が終われば、アクセス確認をして終わり�
 
 {{< admonition tip "ICANN, レジストラ、レジストリ" >}}
 先ほどさらっとレジストラが登場しました。この辺りドメイン管理には3つの登場人物
-{{< admonition >}}
+{{< /admonition >}}
 
 
 {{< admonition tip "DDNS" >}}
@@ -325,23 +329,52 @@ DDNSとはDynamic DNSの略です。自宅鯖とかでよく見ますね。
 DDNSは、ISPから割り当てられた動的IPアドレスをドメインに紐づけるためにあります。これにより、サーバのIPアドレスが変わっても同じドメインでアクセスできるようになります。
 
 仕組みとしては単純です。サーバ側でWAN側IPが変わった時にDDNSサーバに対し、IPアドレスが変わったことを通知し、DDNSがドメインに対応するIPを書き換えるのです。ここでは主にHTTPリクエストでAPIを叩く方式が利用されているようです。
-{{< admonition >}}
+{{< /admonition >}}
 
 
 ## 2　通信
 
-### 2.1　プロトコル
+### 2.1　ヘッダフォーマット
 
 ルートDNSにはNSレコードがたくさんあるイメージ
 
-### 2.3　可用性/冗長性
+### 2.2　実際の通信を見てみよう
+
+    * nslookup, digが行っていること。通信の中身
+
+## 3　可用性
+
+## 4　セキュリティ
+
+### 4.1　DNSへの攻撃
+
+* ゾーン転送要求による登録情報の収集
+* DNSキャッシュポイズニング
+* カミンスキー攻撃
+* DNSレフレクション(アンプ)攻撃
+* DNS水攻め攻撃
+* DNSトンネリング
+* ファーミング
+
+   * IDNA
+
+#### 4.2　DNSセキュリティ
+
+    * DNS SEC
+     * DNSSECは権威DNSとキャッシュDNSの間、クライアントとの間はdns over tlsとか
+   * キャッシュポイズニングとID的なやつ
+    * ポートランダマイゼーション　
+    * TSIG
+* DNSアンプ
+        * キャッシュサーバ公開しない
+        * どうやってレスをでかくする？
+    * 権威DNSも返してくれるけどrecursion noなので、再起問い合わせしてくれない
 
 
-## 3　セキュリティ
 
+{{< admonition tip "FAST FLUXとDomain flux" >}}
 
-
-
+{{< /admonition >}}
 
 
 
