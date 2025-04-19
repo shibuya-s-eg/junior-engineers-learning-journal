@@ -20,7 +20,7 @@
                     hreflang="en"
                     href="http://localhost:1313/junior-engineers-learning-journal/en/"
                     /></url><url>
-            <loc>http://localhost:1313/junior-engineers-learning-journal/en/categories/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link
+            <loc>http://localhost:1313/junior-engineers-learning-journal/en/categories/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="ja"
                         href="http://localhost:1313/junior-engineers-learning-journal/categories/"
@@ -29,7 +29,7 @@
                     hreflang="en"
                     href="http://localhost:1313/junior-engineers-learning-journal/en/categories/"
                     /></url><url>
-            <loc>http://localhost:1313/junior-engineers-learning-journal/en/categories/documentation/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link
+            <loc>http://localhost:1313/junior-engineers-learning-journal/en/categories/documentation/</loc><lastmod>2025-03-15T10:25:52&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="ja"
                         href="http://localhost:1313/junior-engineers-learning-journal/categories/documentation/"
