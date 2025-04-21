@@ -27,25 +27,88 @@ lightgallery: true
 *
 *
 
-## 1　コンテナ基礎
+## 0　はじめに
 
-## 2　Docker
+### 0.1　コンテナの歴史
 
-### 2.1　
+### 0.2　VMとの違い
 
-### 2.2　ClamAVのアーキテクチャ
+### 0.3　近年の傾向
 
-### 2.3　ClamAVのウイルススキャンの仕組み
+## 1　コンテナの仕組み
 
-### 2.4　ClamAVのデータベース更新
+### 1.1　namespace
+### 1.2　cgroup
+### 1.3　chroot/rootfs
+### 1.4　コンテナの本質
+コンテナはプロセス。
+initプロセスとPID
+ホストから見たとき
 
-### 2.5　ClamAVのソースコード
+## 2　Dockerイメージ
 
-## 3　検証
+### 2.1　Docker Hub
+
+### 2.2　イメージの構成
+
+Layerの階層構造
+再利用性
+Union FS
 
 
-## 4　まとめ
+### 2.3　最小化
 
+scratch, Alpine, distroless
+思想
+attack surfaceの削減
+運用
+
+## 3　コンテナセキュリティ
+
+### 3.1　capability
+
+capabilities
+
+seccomp, AppArmor, SELinux
+
+### 3.2　コンテナroot
+
+コンテナ内のrootは？
+ユーザ変える必要ある？
+--privileged
+
+### 3.3　イメージ
+
+信頼性
+Docker Content Trust
+
+## 4　Dockerのユースケースとアーキテクチャ
+
+### 4.1　CI/CD
+
+
+### 4.2　Kubernetes
+
+### 4.3　環境統一
+
+
+## 5　Dockerのメリット/デメリット
+
+### 5.1　メリット
+
+環境構築の迅速化
+環境の再現性と移植性
+リソースの軽量性
+ホストを汚さない
+アタックサーフェスの削減
+
+### 5.2　デメリット
+
+セキュリティ境界の脆弱性
+ホスト依存の可能性
+オーバーヘッド
+
+## 6　まとめ
 
 
 ## 参考
