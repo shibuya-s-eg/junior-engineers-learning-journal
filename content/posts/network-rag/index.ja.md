@@ -1,19 +1,19 @@
 ---
 weight: 4
-title: "HTTPを完全に理解する"
+title: "RAGを完全に理解する"
 date: 2025-04-13T00:00:00+09:00
 lastmod: 2025-04-13T00:00:00+09:00
 draft: true
 author: "しぶや"
 authorLink: "https://github.com/shibuya-s-eg"
-description: "HTTPを完全に理解する"
+description: "RAGを完全に理解する"
 images: []
 resources:
 - name: "featured-image"
   src: "featured-image.png"
 
-tags: ["Application"]
-categories: ["Application"]
+tags: ["RAG"]
+categories: ["RAG"]
 
 lightgallery: true
 ---

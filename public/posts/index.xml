@@ -5,12 +5,60 @@
         <description>All Posts | junior-engineers-learning-journal</description>
         <generator>Hugo -- gohugo.io</generator><language>ja</language><managingEditor>shibuya.s.eg@gmail.com (shibuya.s.eg@gmail.com)</managingEditor>
             <webMaster>shibuya.s.eg@gmail.com (shibuya.s.eg@gmail.com)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 13 Apr 2025 00:00:00 &#43;0900</lastBuildDate><atom:link href="http://localhost:1313/junior-engineers-learning-journal/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>ACLを完全に理解する</title>
+    <link>http://localhost:1313/junior-engineers-learning-journal/network-acl/</link>
+    <pubDate>Sun, 13 Apr 2025 00:00:00 &#43;0900</pubDate>
+    <author>しぶや</author>
+    <guid>http://localhost:1313/junior-engineers-learning-journal/network-acl/</guid>
+    <description><![CDATA[こんにちは、しぶやです。 今回はを完全に理解していきます。 TL;DR 1 はじめに 1.1 なぜACLが重要なのか 1.2 本記事の目的と読者層 1.3 ACLの概要と誤解されが]]></description>
+</item>
+<item>
+    <title>BFDを完全に理解する</title>
+    <link>http://localhost:1313/junior-engineers-learning-journal/network-bfd/</link>
+    <pubDate>Sun, 13 Apr 2025 00:00:00 &#43;0900</pubDate>
+    <author>しぶや</author>
+    <guid>http://localhost:1313/junior-engineers-learning-journal/network-bfd/</guid>
+    <description><![CDATA[こんにちは、しぶやです。 今回はを完全に理解していきます。 TL;DR 1 はじめに 1.1 なぜBFDが必要なのか 1.2 高速な障害検出が重要なユースケース 2 BFDとは]]></description>
+</item>
+<item>
+    <title>BGPを完全に理解する</title>
+    <link>http://localhost:1313/junior-engineers-learning-journal/network-bgp/</link>
+    <pubDate>Sun, 13 Apr 2025 00:00:00 &#43;0900</pubDate>
+    <author>しぶや</author>
+    <guid>http://localhost:1313/junior-engineers-learning-journal/network-bgp/</guid>
+    <description><![CDATA[こんにちは、しぶやです。 今回はを完全に理解していきます。 TL;DR 1 はじめに なぜBGPを理解することが重要なのか BGPの基本的な役割と位置付け（AS]]></description>
+</item>
+<item>
+    <title>CEFを完全に理解する</title>
+    <link>http://localhost:1313/junior-engineers-learning-journal/network-cef/</link>
+    <pubDate>Sun, 13 Apr 2025 00:00:00 &#43;0900</pubDate>
+    <author>しぶや</author>
+    <guid>http://localhost:1313/junior-engineers-learning-journal/network-cef/</guid>
+    <description><![CDATA[こんにちは、しぶやです。 今回はを完全に理解していきます。 TL;DR 1 はじめに 1.1 CEFとは何か CEF（Cisco Express Forwarding）の目的と誕生背]]></description>
+</item>
+<item>
     <title>DNSを完全に理解する</title>
     <link>http://localhost:1313/junior-engineers-learning-journal/network-dns/</link>
     <pubDate>Sun, 13 Apr 2025 00:00:00 &#43;0900</pubDate>
     <author>しぶや</author>
     <guid>http://localhost:1313/junior-engineers-learning-journal/network-dns/</guid>
     <description><![CDATA[こんにちは、しぶやです。 今回はDNSを完全に理解していきます。 本記事では、Linuxをベースに説明を行いますが、本質的な部分はWindows]]></description>
+</item>
+<item>
+    <title>EIGRPを完全に理解する</title>
+    <link>http://localhost:1313/junior-engineers-learning-journal/network-eigrp/</link>
+    <pubDate>Sun, 13 Apr 2025 00:00:00 &#43;0900</pubDate>
+    <author>しぶや</author>
+    <guid>http://localhost:1313/junior-engineers-learning-journal/network-eigrp/</guid>
+    <description><![CDATA[こんにちは、しぶやです。 今回はを完全に理解していきます。 TL;DR 1 はじめに なぜEIGRPを理解することが重要なのか OSPFやRIPとの違いと位置づ]]></description>
+</item>
+<item>
+    <title>HSRPを完全に理解する</title>
+    <link>http://localhost:1313/junior-engineers-learning-journal/network-hsrp/</link>
+    <pubDate>Sun, 13 Apr 2025 00:00:00 &#43;0900</pubDate>
+    <author>しぶや</author>
+    <guid>http://localhost:1313/junior-engineers-learning-journal/network-hsrp/</guid>
+    <description><![CDATA[こんにちは、しぶやです。 今回はを完全に理解していきます。 TL;DR 1 はじめに 1.1 HSRPとは何か Cisco独自のファーストホップ冗長化プロトコルである]]></description>
 </item>
 <item>
     <title>HTTPを完全に理解する</title>
@@ -21,68 +69,20 @@
     <description><![CDATA[こんにちは、しぶやです。 今回はを完全に理解していきます。 TL;DR 1 hoge 1.1 hoge 参考 [1]]]></description>
 </item>
 <item>
+    <title>HTTPを完全に理解する</title>
+    <link>http://localhost:1313/junior-engineers-learning-journal/network-rag/</link>
+    <pubDate>Sun, 13 Apr 2025 00:00:00 &#43;0900</pubDate>
+    <author>しぶや</author>
+    <guid>http://localhost:1313/junior-engineers-learning-journal/network-rag/</guid>
+    <description><![CDATA[こんにちは、しぶやです。 今回はを完全に理解していきます。 TL;DR 1 はじめに 1.1 なぜRAG 1.2 RAGとは何か 1.3 本記事の目的とゴール 2 RAGの全体像と構成]]></description>
+</item>
+<item>
     <title>IPを完全に理解する</title>
     <link>http://localhost:1313/junior-engineers-learning-journal/network-ip/</link>
     <pubDate>Sun, 13 Apr 2025 00:00:00 &#43;0900</pubDate>
     <author>しぶや</author>
     <guid>http://localhost:1313/junior-engineers-learning-journal/network-ip/</guid>
-    <description><![CDATA[こんにちは、しぶやです。 今回はを完全に理解していきます。 TL;DR 1 hoge 1.1 hoge 参考 [1]]]></description>
-</item>
-<item>
-    <title>TCPを完全に理解する</title>
-    <link>http://localhost:1313/junior-engineers-learning-journal/network-tcp/</link>
-    <pubDate>Sun, 13 Apr 2025 00:00:00 &#43;0900</pubDate>
-    <author>しぶや</author>
-    <guid>http://localhost:1313/junior-engineers-learning-journal/network-tcp/</guid>
-    <description><![CDATA[こんにちは、しぶやです。 今回はを完全に理解していきます。 TL;DR 1 hoge 1.1 hoge 参考 [1]]]></description>
-</item>
-<item>
-    <title>UDPを完全に理解する</title>
-    <link>http://localhost:1313/junior-engineers-learning-journal/network-udp/</link>
-    <pubDate>Sun, 13 Apr 2025 00:00:00 &#43;0900</pubDate>
-    <author>しぶや</author>
-    <guid>http://localhost:1313/junior-engineers-learning-journal/network-udp/</guid>
-    <description><![CDATA[こんにちは、しぶやです。 今回はを完全に理解していきます。 TL;DR 1 hoge 1.1 hoge 参考 [1]]]></description>
-</item>
-<item>
-    <title>メールシステムを完全に理解する</title>
-    <link>http://localhost:1313/junior-engineers-learning-journal/application-mail/</link>
-    <pubDate>Sun, 13 Apr 2025 00:00:00 &#43;0900</pubDate>
-    <author>しぶや</author>
-    <guid>http://localhost:1313/junior-engineers-learning-journal/application-mail/</guid>
-    <description><![CDATA[こんにちは、しぶやです。 今回はメールシステムを完全に理解していきます。 TL;DR 0 はじめに 1 メールの仕組み 1.1 メールシステムの構成 1.2 メール送受信の流れ]]></description>
-</item>
-<item>
-    <title>セキュリティソリューションをまとめる</title>
-    <link>http://localhost:1313/junior-engineers-learning-journal/security-solution/</link>
-    <pubDate>Sun, 13 Apr 2025 00:00:00 &#43;0900</pubDate>
-    <author>しぶや</author>
-    <guid>http://localhost:1313/junior-engineers-learning-journal/security-solution/</guid>
-    <description><![CDATA[セキュリティソリューション CASB sase SD-WAN SWG FWAAS ZTNA RBI CASB CSPM DLP UEBA CAASM NIST SP800 207 拡張ゼロトラスト こんにちは、しぶやです。 今回はをセキュリティソリューションをまとめて]]></description>
-</item>
-<item>
-    <title>セキュリティ組織をまとめる</title>
-    <link>http://localhost:1313/junior-engineers-learning-journal/security-organization/</link>
-    <pubDate>Sun, 13 Apr 2025 00:00:00 &#43;0900</pubDate>
-    <author>しぶや</author>
-    <guid>http://localhost:1313/junior-engineers-learning-journal/security-organization/</guid>
-    <description><![CDATA[こんにちは、しぶやです。 今回はセキュリティ系の団体をまとめていきます。 TL;DR 0 はじめに 1 国家戦略 1.1 NISC(内閣サイバーセキュリティセンター) 1.2]]></description>
-</item>
-<item>
-    <title>暗号を完全に理解する</title>
-    <link>http://localhost:1313/junior-engineers-learning-journal/security-cryptography/</link>
-    <pubDate>Sun, 13 Apr 2025 00:00:00 &#43;0900</pubDate>
-    <author>しぶや</author>
-    <guid>http://localhost:1313/junior-engineers-learning-journal/security-cryptography/</guid>
-    <description><![CDATA[こんにちは、しぶやです。 今回はを完全に理解していきます。 TL;DR 暗号方式の話 RSA DH 1 暗号基礎 1.1 暗号とは 1.2 暗号方式 1.3 暗号理論の考え方 無視できるのはなし]]></description>
-</item>
-<item>
-    <title>開発手法をまとめる</title>
-    <link>http://localhost:1313/junior-engineers-learning-journal/others-development-method/</link>
-    <pubDate>Sun, 13 Apr 2025 00:00:00 &#43;0900</pubDate>
-    <author>しぶや</author>
-    <guid>http://localhost:1313/junior-engineers-learning-journal/others-development-method/</guid>
-    <description><![CDATA[こんにちは、しぶやです。 今回ははい初手法をまとめていきます。 TL;DR 1 開発手法 1.1 ウォーターフォールモデル 1.2 アジャイル開発 1.3 スクラム/カンパン 1.4 エク]]></description>
+    <description><![CDATA[こんにちは、しぶやです。 今回はを完全に理解していきます。 TL;DR 1 はじめに 1.1 本記事の目的 1.2 対象読者と前提知識 1.3 本記事の全体構成 2 IPとは何か 2.1 IP]]></description>
 </item>
 </channel>
 </rss>
