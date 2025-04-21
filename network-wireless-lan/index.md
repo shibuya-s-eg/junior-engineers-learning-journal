@@ -4,8 +4,6 @@
 <!--
 Todo:
 - TLDR
-
--->
 * 無線LANセキュリティ
     * WPA3
     * WPA2 Enteprise, Personal
@@ -21,6 +19,8 @@ Todo:
     * iphoneのMACアドレスランダム化
     * OpenRoaming
         * eduroam
+
+-->
 
 
 こんにちは、しぶやです。
