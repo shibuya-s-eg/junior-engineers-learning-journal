@@ -37,6 +37,14 @@
     <description><![CDATA[]]></description>
 </item>
 <item>
+    <title>RAG</title>
+    <link>http://localhost:1313/junior-engineers-learning-journal/tags/rag/</link>
+    <pubDate>Sun, 13 Apr 2025 00:00:00 &#43;0900</pubDate>
+    <author>shibuya.s.eg@gmail.com</author>
+    <guid>http://localhost:1313/junior-engineers-learning-journal/tags/rag/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>RIP</title>
     <link>http://localhost:1313/junior-engineers-learning-journal/tags/rip/</link>
     <pubDate>Sun, 13 Apr 2025 00:00:00 &#43;0900</pubDate>
@@ -74,14 +82,6 @@
     <pubDate>Thu, 20 Mar 2025 00:00:00 &#43;0900</pubDate>
     <author>shibuya.s.eg@gmail.com</author>
     <guid>http://localhost:1313/junior-engineers-learning-journal/tags/os/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Virtualization</title>
-    <link>http://localhost:1313/junior-engineers-learning-journal/tags/virtualization/</link>
-    <pubDate>Tue, 18 Mar 2025 00:00:00 &#43;0900</pubDate>
-    <author>shibuya.s.eg@gmail.com</author>
-    <guid>http://localhost:1313/junior-engineers-learning-journal/tags/virtualization/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>
