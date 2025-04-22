@@ -426,16 +426,99 @@ DNSはクエリとレスポンスが同じフォーマットを利用します�
 
 | セクション |  サイズ   |  用途   |
 |------------|-----------|---------|
-| ヘッダ     |  12バイト |  クエリ/応答に関する情報       |
+| Header     |  12バイト |  クエリ/応答に関する情報       |
 | Question   |  可変     |  対象のドメイン名とレコードタイプの指定       |
 | Answer     |  可変     |  リクエストに応じたレコード       |
 | Authority  |  可変     |  再起問い合わせで使用されるNSレコードのリスト       |
 | Additional |  可変     |  追加のレコード(NSレコードに対するAレコードなど)       |
 
+Headerセクションは以下です。
+
+|   RFC名  |    名前                   | サイズ         |  説明                                                                         |
+|----------|---------------------------|----------------|-------------------------------------------------------------------------------|
+|  ID      |    Packet Identifier      |  16ビット      |   ランダムなID                                                                |
+|  QR      |    Query Response         |    1ビット     |    リクエストは0、レスポンスは1                                               |
+|  OPCODE  |    Operation Code         |    4ビット     |     問い合わせの種類であり、通常は0（Notifyが4、Updateが5だったりするらしい） |
+|  AA      |    Authoritative Answer   |  1ビット       |   応答するサーバが権威サーバであれば1                                         |
+|  TC      |    Truncated Message      |    1ビット     |    パケットサイズが512を超えるならば1                                         |
+|  RD      |    Recursion Desired      |    1ビット     |    再帰的な名前解決をするかリクエストの送信側が指定する                       |
+|  RA      |    Recursion Available    |  1ビット       |    再帰的な名前解決が可能ならば1                                              |
+|  Z       |    Reserved               |   1ビット      |     予約                                                                      |
+|  AD      |    Authentic Data         |   1ビット      |     DNSSECの検証成功時に1                                                     |
+|  CD      |    Checking Disabled      |   1ビット      |     DNSSECの検証成功時に1                                                     |
+|  RCode   |    Response Code          |   4ビット      |   サーバがレスポンスの状態をクライアントに提示するためのコード                |
+|  QDCOUNT |    Question Count         |   16ビット     |   Questionセクションのエントリ数                                              |
+|  ANCOUNT |    Answer Count           |   16ビット     |     ANCOUNTセクションのエントリ数                                             |
+|  NSCOUNT |    Authority Count        |    16ビット    |      NSCOUNTセクションのエントリ数                                            |
+|  ARCOUNT |    Additional Count       |   16ビット     |     ARCOUNTセクションのエントリ数                                             |
+
+
+Questionセクションは以下です。
+
+|   フィールド名  |  サイズ         |     説明                 |
+|-----------------|-----------------|--------------------------|
+|   Name          |    可変         |    ドメイン名            |
+|   Type          |    2バイト      |     レコードタイプ       |
+|   Class         |    2バイト      |     クラス（基本的には1）|
+
+
+Anser/Authority/Additionalセクションは以下です。
+
+|   フィールド名  |  サイズ         |     説明                    |
+|-----------------|-----------------|-----------------------------|
+|   Name        |    可変           |    ドメイン名               |
+|   Type        |    2バイト        |     レコードタイプ          |
+|   Class        |    2バイト       |     クラス（基本的には1）   |
+|   TTL        |    4バイト         |     レコードのキャッシュ時間|
+|   Len        |    2バイト         |     レコード長              |
+
+
+{{< admonition tip "レコードのクラス" >}}
+DNSのパケットにクラスがでてきました。
+
+これは下のようなゾーンファイルでもでてくる"IN"のことです。
+
+```
+example.com. IN MX 10 mail.example.com
+```
+
+"IN"はインターネットを表し、インターネットで使われることを意味します。
+他にも、"CH"や"HS"がありますが、"CH"は歴史的なもの、"HS"は特殊用途で利用されるものであるため、"IN"以外を見ることはまずないといえます。
+
+{{< /admonition >}}
+
 
 ### 5.2　パケット解析
 
-    * nslookup, digが行っていること。通信の中身
+では、実際にnslookupコマンドやdigコマンドでDNSパケットを見てみましょう。
+
+nslookupでgithub.ioの名前解決をしてみます。
+nslookupではデフォルトでA/AAAAレコードを指定してDNSクエリを送信します。
+
+{{< image src="dns-query-a-record.png" width="800px" height="600px" caption="nslookup" >}}
+{{< image src="dns-packet-a-record-1.png" width="800px" height="600px" caption="A/AAAAレコードのDNSクエリ" >}}
+{{< image src="dns-packet-a-record-2.png" width="800px" height="600px" caption="A/AAAAレコードのDNS応答" >}}
+
+次に、digでANYを指定してDNSクエリを送信してみます。
+
+{{< image src="dns-dig.png" width="800px" height="600px" caption="dig" >}}
+{{< image src="dns-packet-dig-1.png" width="800px" height="600px" caption="ANY指定のDNSクエリ" >}}
+{{< image src="dns-packet-dig-2.png" width="800px" height="600px" caption="ANY指定のDNS応答" >}}
+
+
+{{< admonition tip "ANYレコードの制限" >}}
+最近のDNSサーバではANYクエリに対する応答に制限をかけていることが多いです。
+これは、反射型DoSに利用されることを防止するためや負荷対策のためです。
+DNS通信にはUDPが利用され、送信元を偽造できる他、応答のレコードが多いとデータ量が数十倍から数百倍になります。
+このため、効率よくDoS攻撃に利用することができるのです。
+{{< /admonition >}}
+
+
+{{< admonition tip "DNS Cookie" >}}
+反復型DoS攻撃
+キャッシュポイズニング
+{{< /admonition >}}
+
 
 ## 6　可用性
 
