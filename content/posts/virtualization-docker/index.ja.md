@@ -67,9 +67,12 @@ attack surfaceの削減
 
 ### 3.1　capability
 
-capabilities
+管理者権限を与えずに、最小権限の原則に則り、動作に必要な権限のみを与えるやつです。
+以下は「Linuxのアクセス制御を完全に理解する」からの抜粋です。
 
-seccomp, AppArmor, SELinux
+>
+
+基本的なアクセス制御から復習したい方は「Linuxのアクセス制御を完全に理解する」をお勧めします！
 
 ### 3.2　コンテナroot
 
@@ -110,6 +113,8 @@ Docker Content Trust
 
 ## 6　まとめ
 
+kubernetes thread model
+kunernetes atacck tree
 
 ## 参考
 
