@@ -12,8 +12,8 @@ resources:
 - name: "featured-image"
   src: "featured-image.png"
 
-tags: ["セキュリティ"]
-categories: ["セキュリティ"]
+tags: ["Security"]
+categories: ["Security"]
 
 lightgallery: true
 ---

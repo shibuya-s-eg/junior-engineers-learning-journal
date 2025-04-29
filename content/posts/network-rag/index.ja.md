@@ -12,8 +12,8 @@ resources:
 - name: "featured-image"
   src: "featured-image.png"
 
-tags: ["RAG"]
-categories: ["RAG"]
+tags: ["Network"]
+categories: ["Network"]
 
 lightgallery: true
 ---
