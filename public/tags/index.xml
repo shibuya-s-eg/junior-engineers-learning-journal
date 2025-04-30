@@ -37,22 +37,6 @@
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>RAG</title>
-    <link>http://localhost:1313/junior-engineers-learning-journal/tags/rag/</link>
-    <pubDate>Sun, 13 Apr 2025 00:00:00 &#43;0900</pubDate>
-    <author>shibuya.s.eg@gmail.com</author>
-    <guid>http://localhost:1313/junior-engineers-learning-journal/tags/rag/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>RIP</title>
-    <link>http://localhost:1313/junior-engineers-learning-journal/tags/rip/</link>
-    <pubDate>Sun, 13 Apr 2025 00:00:00 &#43;0900</pubDate>
-    <author>shibuya.s.eg@gmail.com</author>
-    <guid>http://localhost:1313/junior-engineers-learning-journal/tags/rip/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
     <title>Security</title>
     <link>http://localhost:1313/junior-engineers-learning-journal/tags/security/</link>
     <pubDate>Sun, 13 Apr 2025 00:00:00 &#43;0900</pubDate>
@@ -61,27 +45,43 @@
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>セキュリティ</title>
-    <link>http://localhost:1313/junior-engineers-learning-journal/tags/%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3/</link>
-    <pubDate>Sun, 13 Apr 2025 00:00:00 &#43;0900</pubDate>
-    <author>shibuya.s.eg@gmail.com</author>
-    <guid>http://localhost:1313/junior-engineers-learning-journal/tags/%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>脆弱性</title>
-    <link>http://localhost:1313/junior-engineers-learning-journal/tags/%E8%84%86%E5%BC%B1%E6%80%A7/</link>
-    <pubDate>Sun, 13 Apr 2025 00:00:00 &#43;0900</pubDate>
-    <author>shibuya.s.eg@gmail.com</author>
-    <guid>http://localhost:1313/junior-engineers-learning-journal/tags/%E8%84%86%E5%BC%B1%E6%80%A7/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
     <title>OS</title>
     <link>http://localhost:1313/junior-engineers-learning-journal/tags/os/</link>
     <pubDate>Thu, 20 Mar 2025 00:00:00 &#43;0900</pubDate>
     <author>shibuya.s.eg@gmail.com</author>
     <guid>http://localhost:1313/junior-engineers-learning-journal/tags/os/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Virtualization</title>
+    <link>http://localhost:1313/junior-engineers-learning-journal/tags/virtualization/</link>
+    <pubDate>Tue, 18 Mar 2025 00:00:00 &#43;0900</pubDate>
+    <author>shibuya.s.eg@gmail.com</author>
+    <guid>http://localhost:1313/junior-engineers-learning-journal/tags/virtualization/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Database, Storage</title>
+    <link>http://localhost:1313/junior-engineers-learning-journal/tags/database-storage/</link>
+    <pubDate>Sun, 16 Mar 2025 00:00:00 &#43;0900</pubDate>
+    <author>shibuya.s.eg@gmail.com</author>
+    <guid>http://localhost:1313/junior-engineers-learning-journal/tags/database-storage/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>HTML</title>
+    <link>http://localhost:1313/junior-engineers-learning-journal/tags/html/</link>
+    <pubDate>Sun, 01 Dec 2019 21:57:40 &#43;0800</pubDate>
+    <author>shibuya.s.eg@gmail.com</author>
+    <guid>http://localhost:1313/junior-engineers-learning-journal/tags/html/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Markdown</title>
+    <link>http://localhost:1313/junior-engineers-learning-journal/tags/markdown/</link>
+    <pubDate>Sun, 01 Dec 2019 21:57:40 &#43;0800</pubDate>
+    <author>shibuya.s.eg@gmail.com</author>
+    <guid>http://localhost:1313/junior-engineers-learning-journal/tags/markdown/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

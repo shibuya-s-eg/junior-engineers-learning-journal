@@ -119,6 +119,9 @@ IaC
 
 ## 8　まとめ
 
+kubernetes thread model
+kunernetes atacck tree
+
 
 ## 参考
 
