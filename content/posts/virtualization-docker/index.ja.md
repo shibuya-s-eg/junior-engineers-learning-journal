@@ -148,6 +148,16 @@ ip link set
 これでホストとコンテナが通信できるようになりました。
 このように、Network NamespaceではNICとルーティングテーブルを分離することができます。
 
+続いては、User Namespaeです。User Namespaceはプロセスごとにユーザやグループの分離を行います。
+
+新たなUsername Namespaceを作成してみましょう。
+
+unshare --user bash
+
+新しいUser Namespaceを作成するとユーザはnobodyになります。
+ここでホストのユーザとのマッピングを行うのです。
+続いては、User: command not found
+新たなUsername: command not found
 
 
 
