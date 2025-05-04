@@ -21,6 +21,7 @@ lightgallery: true
 こんにちは、しぶやです。\
 学生時代の研究から始まり、社会人になってからも愛用しているDockerについて、気合をいれてまとめようと思います。
 
+
 ## TL;DR
 
 *
@@ -98,7 +99,7 @@ Namespaceの情報は各プロセスが持つので、ユーザでは一部のNa
 {{< image src="proc-visibility.png" width="800px" height="600px" caption="/procのアクセス権" >}}
 
 
-unshare utsコマンド
+{{< image src="uts.png" width="800px" height="600px" caption="UTS Namespaceの分離" >}}
 
 "unshare"コマンドは新しいNamespaceでプログラムを実行できます。
 すなわち、親プロセスである現在のshell(私の場合はzsh)からNamespaceを継承せずに子プロセスを作成することができます。
@@ -107,7 +108,7 @@ unshare utsコマンド
 この場合、新しく作成したプロセス内でhostnameを変更しても、shellが認識しているUTS Namespaceとホスト側の
 が認識していUTS Namespaceが異なるため、ホスト側からhostnameコマンドを打っても特に変化はありません。
 
-unshare psコマンド
+{{< image src="pid.png" width="800px" height="600px" caption="PID Namespaceの分離" >}}
 
 プロセスID空間を分離していますが、ホストのプロセス全体が見えています。
 これは、psコマンドは/procを見てるだけだからです。
@@ -116,7 +117,7 @@ unshare psコマンド
 コンテナの動きを考えると、プロセスID空間が分離され、新しいプロセスからは何も見えない状況となって欲しいところです。
 これを実現するには、1.3のchrootを利用する必要があります。
 
-unshare mountコマンド
+{{< image src="mount.png" width="800px" height="600px" caption="mount Namespaceの分離" >}}
 
 mount namespaceはプロセスにファイルシステムのマウントポイントをバインドし実行するコマンドです。
 そもそもプロセスへのマウントとは何でしょうか？
@@ -124,11 +125,9 @@ Linuxにおいて各プロセスはファイルシステムのマウントポイ
 通常は全て同じ"/"がマウントポイントとしてバインドされているはずです。
 これは、/proc/${pid}/mountsで見ることができます。
 
-プロセスのmountの写真
+{{< image src="proc-mounts.png" width="800px" height="600px" caption="プロセスのマウント情報" >}}
 
 プロセスごとにマウントポイントを持っていることが分かります。
-
-先ほどのunshare --mountコマンドではshを起動していますが、マウントポイントがであるため、それより上の階層にはアクセスできません。
 
 Dockerでは、このmount namespaceの分離と1.3で説明するchrootを組み合わせてコンテナ領域の分離を行っています。
 
@@ -152,12 +151,27 @@ ip link set
 
 新たなUsername Namespaceを作成してみましょう。
 
-unshare --user bash
+{{< image src="user.png" width="800px" height="600px" caption="a" >}}
+{{< image src="user-1.png" width="800px" height="600px" caption="a" >}}
+{{< image src="user-2.png" width="800px" height="600px" caption="a" >}}
+{{< image src="user-3.png" width="800px" height="600px" caption="a" >}}
+{{< image src="capsh.png" width="800px" height="600px" caption="a" >}}
 
 新しいUser Namespaceを作成するとユーザはnobodyになります。
 ここでホストのユーザとのマッピングを行うのです。
-続いては、User: command not found
-新たなUsername: command not found
+
+
+残りはIPC NamespaceとCgroup Namespaceです。
+
+IPC Namespaceは、プロセス間通信を行うために利用されます。
+Dockerではコンテナ同士に同じIPC Namespaceを割り当てることで互いに共有メモリにアクセスできるようにします。
+
+{{< image src="ipcs.png" width="800px" height="600px" caption="a" >}}
+
+Cgroup Namespaceは1.2節で説明するCgroupについて、Cgroupの見える範囲を分離します。
+これにより、プロセスは上位のリソース構成を覗けず、独立して動いているように見えます。
+
+{{< image src=cgroup.png" width="800px" height="600px" caption="a" >}}
 
 
 
@@ -221,10 +235,13 @@ chrootは引数にパスとコマンドを受け取ります。
 
 実際に、適当なコマンドで試してみましょう。
 
+{{< image src="chroot-1.png" width="800px" height="600px" caption="chroot" >}}
 
-配下にechoの実行ファイルがないため、エラーになります。
+配下にbashの実行ファイルがないため、エラーになります。
 
 では、よりdockerを意識してalpineのパッケージを使って試してみましょう。
+
+{{< image src="chroot-2.png" width="800px" height="600px" caption="chroot" >}}
 
 配下にalpineのパッケージが一式あるため、コマンドを実行できます。
 shを実行してみるとルートより上には上がれず、一式のファイルがあるため仮想環境のように感じます。
@@ -239,7 +256,7 @@ chrootではホストの環境変数が引き継がれていましたが、docke
 実は、環境変数の実体はメモリ上に保存されており、プロセスごとに保持しています。
 
 プロセスがもつ環境変数の例
-/proc/$$/environ
+{{< image src="environ.png" width="800px" height="600px" caption="プロセスがもつ環境変数" >}}
 
 のプロセスが環境変数を持っていることが分かります。
 
@@ -253,6 +270,8 @@ dockerなどでは、コンテナを生成する際にメインプロセスに�
 
 
 ### 1.4　コンテナの本質
+
+コンテナ=コンテナ化されたプロセス
 
 コンテナはプロセス。
 initプロセスとPID
