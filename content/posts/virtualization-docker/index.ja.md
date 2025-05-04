@@ -1,12 +1,12 @@
 ---
 weight: 4
-title: "Dockerを完全に理解する"
+title: "コンテナとDockerを完全に理解する"
 date: 2025-04-30T00:00:00+09:00
 lastmod: 2025-04-30T00:00:00+09:00
 draft: false
 author: "しぶや"
 authorLink: "https://github.com/shibuya-s-eg"
-description: "Dockerを完全に理解する。"
+description: "コンテナとDockerを完全に理解する。"
 images: []
 resources:
 - name: "featured-image"
@@ -19,7 +19,7 @@ lightgallery: true
 ---
 
 こんにちは、しぶやです。\
-学生時代の研究から始まり、社会人になってからも愛用しているDockerについて、気合をいれてまとめようと思います。
+学生時代の研究から始まり、社会人になってからも愛用しているDockerとそもそものコンテナについて、気合をいれてまとめようと思います。
 
 
 ## TL;DR
