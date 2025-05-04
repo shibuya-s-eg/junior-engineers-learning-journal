@@ -328,6 +328,9 @@ Docker Hubの機能には以下のようなものがあります。
 
 ### 2.2　イメージの構成
 
+https://qiita.com/mamomamo/items/448a8edf6d4ccfc22bbd
+https://github.com/opencontainers/image-spec
+
 Layerの階層構造
 再利用性
 Union FS
