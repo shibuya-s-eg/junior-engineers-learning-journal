@@ -309,8 +309,6 @@ Docker Hubの機能には以下のようなものがあります。
 
 ### 2.2　イメージの構成
 
-https://qiita.com/mamomamo/items/448a8edf6d4ccfc22bbd
-https://github.com/opencontainers/image-spec
 
 Layerの階層構造
 再利用性
@@ -504,6 +502,6 @@ Kubernetesについては、「Kubernetesについて完全に理解する」で
 [5] [docker hub クラウドネイティブなソフトウェアの導入を簡単に](https://www.docker.com/ja-jp/products/docker-hub/)
 [6] [dockerが使うUnionFileSystemを僕なりに解釈した](https://namu-r21.hatenablog.com/entry/2016/10/27/013006)
 [7] [コンテナセキュリティ コンテナ化されたアプリケーションを保護する要素技術](https://book.impress.co.jp/books/1122101051)
-[8] []()
-[9] []()
+[8] [コンテナの標準仕様について調査してみた件](https://qiita.com/mamomamo/items/448a8edf6d4ccfc22bbd)
+[9] [OCI Image Format Specification](https://github.com/opencontainers/image-spec)
 
