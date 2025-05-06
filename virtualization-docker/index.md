@@ -359,6 +359,8 @@ cgroupだったり
 
 信頼性
 Docker Content Trust
+最小化
+機密情報
 
 
 
