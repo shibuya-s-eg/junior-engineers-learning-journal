@@ -315,7 +315,8 @@ Layerの階層構造
 再利用性
 Union FS
 
-{{< admonition tip "環境変数" >}}
+{{< admonition tip "OCI Initiative" >}}
+
 {{< /admonition >}}
 
 
