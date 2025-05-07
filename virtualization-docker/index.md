@@ -157,13 +157,12 @@ lsns -t netの写真
 Network Namespaceはネットワークインターフェースやルーティングテーブルの分離を行います。
 実際に見てみしょう。
 
-unshare --netの写真
+{{< image src="unshare-net.png" width="800px" height="600px" caption="a" >}}
 
 これだけでは、仮想インターフェースがなく、ホストと通信ができません。
 ホストと通信できるようにします。
 
-ip link
-ip link set
+{{< image src="unshare-net-2.png" width="800px" height="600px" caption="a" >}}
 
 これでホストとコンテナが通信できるようになりました。
 このように、Network NamespaceではNICとルーティングテーブルを分離することができます。
@@ -230,7 +229,10 @@ Linuxの擬似ファイルシステムのは以下のようなものがありま
 デバイスファイル
 
 
-cgroup実践
+{{< image src="fs-cgroup.png" width="800px" height="600px" caption="" >}}
+{{< image src="cgroup-nolimit.png" width="800px" height="600px" caption="" >}}
+{{< image src="cgroup-oomkiller.png" width="800px" height="600px" caption="" >}}
+
 
 
 
@@ -311,13 +313,42 @@ Docker Hubの機能には以下のようなものがあります。
 
 ### 2.2　イメージの構成
 
-Layerの階層構造
-再利用性
-Union FS
+コンテナ関連の標準仕様は[OCI（Open Container Initiative）](https://opencontainers.org/)で標準化されています。
+OCIは2015年にDocker社を含む複数の企業により設立されました。
+以下は、OCIで標準化しているものの例です。
+* OCI Runtime Specification...コンテナランタイムの標準仕様
+* OCI Image Format Specification...コンテナイメージの標準仕様
+* OCI Distribution Specification...コンテナイメージの配布に関する標準仕様
 
-{{< admonition tip "OCI Initiative" >}}
+Dockerでも利用するコンテナのイメージは[OCI Image Format Specification](https://github.com/opencontainers/image-spec/blob/main/manifest.md)で標準化されているのです。
+ここでは、このコンテナイメージについて深ぼって見ていきます。
 
-{{< /admonition >}}
+1.3節のchrootでは、パケージ群をまるごと用意して、コンテナ環境の動作イメージを確認しました。
+もちろん、コンテナイメージは単純にパッケージ群をまとめて圧縮しているだけではありません。
+ここでは、コンテナイメージの階層構造について学習しようと思います。
+
+コンテナイメージにはLayerという概念があります。
+これはUnionFSの仕組みを利用したイメージの構築/管理の仕組みです。
+UnionFSは[ここ](https://christina04.hatenablog.com/entry/2016/01/26/204659)の説明が分かりやすいです。
+
+Dockerイメージのレイヤの特徴は以下です。
+* 読み取り専用のレイヤを積み重ね、最上位に書き込み可能なレイヤを追加する。
+* 各レイヤはファイルシステムの差分情報をもつ・
+* 同じイメージから作成されたコンテナは読み取り専用レイヤを共有する。
+* 読み取り専用レイヤはキャッシュされる。
+
+実際にイメージを見てみましょう。
+
+{{< image src="docker-build.png" width="800px" height="600px" caption="" >}}
+{{< image src="docker-inspect.png" width="800px" height="600px" caption="" >}}
+{{< image src="image-content.png" width="800px" height="600px" caption="" >}}
+{{< image src="image-content-2.png" width="800px" height="600px" caption="" >}}
+{{< image src="image-content-3.png" width="800px" height="600px" caption="" >}}
+{{< image src="image-content-4.png" width="800px" height="600px" caption="" >}}
+{{< image src="image-content-5.png" width="800px" height="600px" caption="" >}}
+{{< image src="image-content-6.png" width="800px" height="600px" caption="" >}}
+{{< image src="image-content-7.png" width="800px" height="600px" caption="" >}}
+
 
 
 ### 2.3　最小化
@@ -363,9 +394,35 @@ cgroupだったり
 管理者権限を与えずに、最小権限の原則に則り、動作に必要な権限のみを与えるやつです。
 以下は「Linuxのアクセス制御を完全に理解する」からの抜粋です。
 
+>capabilityは従来のルート権限を分割したものです。
+>ルート権限という強く広い権限を与えるではなく、capabilityによる一部の強い権限を与えることにより、最小権限の原則に従うことができます。
 >
-
-基本的なアクセス制御から復習したい方は「Linuxのアクセス制御を完全に理解する」をお勧めします！
+>実際に例を見てみましょう。以下はubuntuにもともと入っている"ping"です。
+>
+>{{< image src="ppping.png" width="800px" height="600px" caption="pingの権限" >}}
+>
+>特にsetuidが付与されているわけでもなく、一般ユーザとして実行できるように見えます。
+>実際に、pingは一般ユーザでも実行できると思います。
+>
+>では、このコマンドを自分のものとしてコピーして実行してみましょう。
+>一般ユーザとして実行できているファイルなので、コピーができれば問題なく動作するはずです。
+>
+>{{< image src="ping_caps_error.png" width="800px" height="600px" caption="ソケットエラー" >}}
+>
+>エラーになりました。
+>ローソケットの操作が許可されていないと怒られており、"capability"か"setuid"がないと言われています。
+>
+>これは、"ping"がローソケットを利用しており、その権限がないためエラーが出ているのです。
+>では、もともと入っていた"ping"を見てみましょう。
+>
+>{{< image src="ping_caps.png" width="800px" height="600px" caption="pingのcapability" >}}
+>
+>"cap_net_raw=ep"とあり、ローソケットを利用するためのcapabilityが割り当てられていることが分かります。\
+>※ e=Effectve, p=Permitted を意味してます。
+>
+>これにより、setuidを利用せずにローソケットの利用しており、pingに脆弱性があったとしても権限昇格などの危険性が緩和されます。
+>
+>基本的なアクセス制御から復習したい方は「Linuxのアクセス制御を完全に理解する」をお勧めします！
 
 ### 4.2　コンテナroot
 
@@ -526,4 +583,5 @@ Kubernetesについては、「Kubernetesについて完全に理解する」で
 [9] [OCI Image Format Specification](https://github.com/opencontainers/image-spec)
 [10] [Dockerコンテナのレイヤ構造とは？](https://qiita.com/okmtz/items/f8231c83134a6363647b)
 [11] [UnionFS で Docker のレイヤ構造を理解する](https://christina04.hatenablog.com/entry/2016/01/26/204659)
+[12] [Open Container Initiative](https://opencontainers.org/)
 
