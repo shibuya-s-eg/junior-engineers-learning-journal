@@ -50,10 +50,10 @@ Dockerの登場により、コンテナは非常に使いやすいものとな�
 ### 0.2　VMとの違い
 
 VMとコンテナの違いはよく聞く話だと思います。
-[よくある説明](https://www.redhat.com/ja/topics/containers/containers-vs-vms)は、ホストOS上に新たにOSを乗せるているかとホストOS上にコンテナとして隔離されたアプリケーションを乗せているかです。
+[よくある説明](https://www.redhat.com/ja/topics/containers/containers-vs-vms)は、 「ホストOS上に新たにOSを乗せるているか」と「ホストOS上にコンテナとして隔離されたアプリケーションを乗せているか」の違いによるものです。
 
 この説明の通り、**VMとコンテナの違いはホストのカーネルを共有するか**です。
-VMはホストOS上でカーネルを仮想化を行います。
+VMはホストOS上でカーネルの仮想化を行います。
 一方で、コンテナはホストのカーネルを共有し、リソースなどを分離します。
 
 これにより、コンテナは**軽量なアプリケーションの実行環境**を実現します。
@@ -66,7 +66,7 @@ VMはホストOS上でカーネルを仮想化を行います。
 > by [redhat](https://www.redhat.com/ja/topics/virtualization/what-is-a-hypervisor)
 
 一般的にもよく使われるものでいうと、VMware Workstationや VirtualBoxがありますね。
-商用で見るもだとVMware ESXiやKVMなどがありますね。
+商用でも見るものだとVMware ESXiやKVMなどがありますね。
 
 これらのハイパーバイザーは大きく以下の2種類に分けられます。
 | 項目 | タイプ1 | タイプ2 |
@@ -109,13 +109,13 @@ NamespaceはLinuxカーネルに組み込まれたプロセス単位でリソー
 linuxでサポートされているNamespaceには以下のよいなものがあります。
 |名前 | 分離対象 | 説明|
 |-----------|-------|-----|
-|Mount (mnt) | ファイルシステムのマウント状態 | それぞれ別のルートディレクトリ構造を持てる|
-|UTS|ホスト名、ドメイン名|各Namespaceごとにホスト名が持てる|
-|IPC|プロセス間通信（共有メモリなど）|通信空間を隔離できる|
-|PID|プロセスID|プロセスID空間が分かれる|
-|Network|ネットワークデバイス、IPアドレス|独立したネットワークスタック|
-|User|ユーザID、グループID|プロセスに別のUID/GIDマッピング|
-|Cgroup|cgroupのビュー|制御グループの空間を分離|
+|Mount (mnt) | ファイルシステムのマウント状態 | 別のルートディレクトリ構造を持たせることができる|
+|UTS|ホスト名、ドメイン名|各Namespaceごとにホスト名が持つことができる|
+|IPC|プロセス間通信（共有メモリなど）|通信空間を隔離することができる|
+|PID|プロセスID|プロセスID空間を分けることができる|
+|Network|ネットワークデバイス、IPアドレス|独立したネットワークスタックを管理できる|
+|User|ユーザID、グループID|プロセスに別のUID/GIDマッピングできる|
+|Cgroup|cgroupのビュー|制御グループの空間を分離することができる|
 
 では、実際にNamespaceを見てみましょう。
 
@@ -128,23 +128,27 @@ NPROCSはそのNamespaceに所属するプロセス数、PID以降は親プロ�
 ここで、"sudo lsns"と"lsns"で表示されているNamespaceの数が違うことが分かります。
 
 これは、rootでしかアクセスできないプロセスがいるためです。
-よく見るとNPROCSの値も異なることが解ると思います。
+よく見るとNPROCSの値も異なることが分かると思います。
 Namespaceの情報は各プロセスが持つので、ユーザでは一部のNamespaceの所属するすべてのプロセスが見えず、Namespaceを確認することができないのです。
 
-実際に、/proc配下のアクセス権限を見るとユーザではみれないものがいることが分かります。
+実際に、/proc配下のアクセス権限を見ると一般ユーザではみれないものがいることが分かります。
 （Linuxではプロセス情報はLinuxカーネルが提供する/procから取得しています。）
 
 {{< image src="proc-visibility.png" width="800px" height="600px" caption="/procのアクセス権" >}}
 
+それでは、Namespaceについて詳しく見ていきましょう。
+まずはUTSです。
 
 {{< image src="uts.png" width="800px" height="600px" caption="UTS Namespaceの分離" >}}
 
 "unshare"コマンドは新しいNamespaceでプログラムを実行できます。
-すなわち、親プロセスである現在のshell(私の場合はzsh)からNamespaceを継承せずに子プロセスを作成することができます。
+すなわち、親プロセスである現在のshellからNamespaceを継承せずに子プロセスを作成することができます。
 
 今回の例では、新しいUTS Namespaceを持つshellのプロセスを作成しています。
 この場合、新しく作成したプロセス内でhostnameを変更しても、shellが認識しているUTS Namespaceとホスト側の
 が認識していUTS Namespaceが異なるため、ホスト側からhostnameコマンドを打っても特に変化はありません。
+
+プロセス空間についても試してみましょう。
 
 {{< image src="pid.png" width="800px" height="600px" caption="PID Namespaceの分離" >}}
 
@@ -155,60 +159,75 @@ Namespaceの情報は各プロセスが持つので、ユーザでは一部のNa
 コンテナの動きを考えると、プロセスID空間が分離され、新しいプロセスからは何も見えない状況となって欲しいところです。
 これを実現するには、1.3のchrootを利用する必要があります。
 
+{{< admonition tip "/procの値とNamespace" >}}
+/procはアクセス時にアクセスしたプロセスのNamespaceに応じて結果を返すわけではないようです。
+正確には、/procをマウントしたプロセスのNamespaceに応じてアクセス時の結果が変わるようです。
+{{< /admonition >}}
+
+それでは、mount Namespaceについて見ていきましょう。
+
 {{< image src="mount.png" width="800px" height="600px" caption="mount Namespaceの分離" >}}
 
-mount namespaceはプロセスにファイルシステムのマウントポイントをバインドし実行するコマンドです。
+"mount --bind"はプロセスにファイルシステムのマウントポイントをバインドし実行するコマンドです。
 そもそもプロセスへのマウントとは何でしょうか？
 Linuxにおいて各プロセスはファイルシステムのマウントポイントを持っています。
-通常は全て同じ"/"がマウントポイントとしてバインドされているはずです。
 これは、/proc/${pid}/mountsで見ることができます。
 
 {{< image src="proc-mounts.png" width="800px" height="600px" caption="プロセスのマウント情報" >}}
 
-プロセスごとにマウントポイントを持っていることが分かります。
+よく分からないものが大量にマウントされていますね。
+いずれにせよ、プロセスごとにマウントポイントを持っていることが分かると思います。
 
 Dockerでは、このmount namespaceの分離と1.3で説明するchrootを組み合わせてコンテナ領域の分離を行っています。
 
-lsns -t netの写真
 
+続いてNetwork Namespaceです。
 Network Namespaceはネットワークインターフェースやルーティングテーブルの分離を行います。
 実際に見てみしょう。
 
-{{< image src="unshare-net.png" width="800px" height="600px" caption="a" >}}
+{{< image src="unshare-net.png" width="800px" height="600px" caption="Network Namespaceの作成" >}}
 
-これだけでは、仮想インターフェースがなく、ホストと通信ができません。
+上記の例では、新規のNetwork Namespaceを作成し、bashを実行しています。
+しかし、これだけでは、仮想インターフェースがないためホストと通信ができません。
 ホストと通信できるようにします。
 
-{{< image src="unshare-net-2.png" width="800px" height="600px" caption="a" >}}
+{{< image src="unshare-net-2.png" width="800px" height="600px" caption="仮想NICの作成" >}}
+
+※ 一応、左右で時系列を意識しています。。
 
 これでホストとコンテナが通信できるようになりました。
-このように、Network NamespaceではNICとルーティングテーブルを分離することができます。
+上記の例では、お互いのNetwork Namespaceで仮想NICを作成し、IPアドレスを割り当てることで通信できるようにしました。
+Network Namespaceを分離することにより、各プロセスはNICやルーティングテーブルなど独立したネットワークスタックを保持できていることが分かります。
 
 続いては、User Namespaeです。User Namespaceはプロセスごとにユーザやグループの分離を行います。
 
 新たなUsername Namespaceを作成してみましょう。
 
 {{< image src="user.png" width="800px" height="600px" caption="a" >}}
-{{< image src="user-1.png" width="800px" height="600px" caption="a" >}}
-{{< image src="user-2.png" width="800px" height="600px" caption="a" >}}
-{{< image src="user-3.png" width="800px" height="600px" caption="a" >}}
-{{< image src="capsh.png" width="800px" height="600px" caption="a" >}}
 
 新しいUser Namespaceを作成するとユーザはnobodyになります。
-ここでホストのユーザとのマッピングを行うのです。
 
+ここでホストのユーザとのマッピングを行います。
+
+{{< image src="user-3.png" width="800px" height="600px" caption="User Namespaceの作成" >}}
+
+{{< image src="user-2.png" width="800px" height="600px" caption="プロセスへのUIDのマッピング" >}}
+
+ 時系列が分かりづらくなってしまいましたが、1枚目の画像の前半では、User Namespaceを新たに作成し、bashを起動しています。
+その後、2枚目の画像のように、ホストから先程のプロセスにrootのUIDをマッピングしています。
+これにより、1枚目の画像の後半のようにプロセスのユーザがrootに置き換わります。
 
 残りはIPC NamespaceとCgroup Namespaceです。
 
 IPC Namespaceは、プロセス間通信を行うために利用されます。
 Dockerではコンテナ同士に同じIPC Namespaceを割り当てることで互いに共有メモリにアクセスできるようにします。
 
-{{< image src="ipcs.png" width="800px" height="600px" caption="a" >}}
+{{< image src="ipcs.png" width="800px" height="600px" caption="IPC Namespaceの分離" >}}
 
 Cgroup Namespaceは1.2節で説明するCgroupについて、Cgroupの見える範囲を分離します。
 これにより、プロセスは上位のリソース構成を覗けず、独立して動いているように見えます。
 
-{{< image src="cgroup.png" width="800px" height="600px" caption="abc" >}}
+{{< image src="cgroup.png" width="800px" height="600px" caption="cgroup Namespaceの分離" >}}
 
 ### 1.2　cgroup
 
@@ -231,7 +250,7 @@ Dockerはコンテナ単位でCgroupのグループを作成し、リソース�
 
 Linuxカーネルは/sys/fs/cgroupに擬似ファイルシステムを作成し、Cgroupに関連する情報を提供します。
 
-tip 擬似ファイルシステムとは
+{{< admonition tip "擬似ファイルシステムとは" >}}
 
 擬似ファイルシステムとは、実際にファイルのようにカーネル内部の情報にアクセスできるようにする仕組みです。
 実際にディスク内部にデータを保存しているわけではなく、リアルタイムにカーネルが情報を生成して応答してくれています。
@@ -245,6 +264,7 @@ Linuxの擬似ファイルシステムのは以下のようなものがありま
 * /dev\
 デバイスファイル
 
+{{< /admonition >}}
 
 {{< image src="fs-cgroup.png" width="800px" height="600px" caption="" >}}
 {{< image src="cgroup-nolimit.png" width="800px" height="600px" caption="" >}}
@@ -589,15 +609,15 @@ Kubernetesについては、「Kubernetesについて完全に理解する」で
 
 ## 参考
 
-[1] [docker](https://www.docker.com/)
-[2] [コンテナセキュリティ　コンテナ化されたアプリケーションを保護する要素技術 ](https://www.amazon.co.jp/%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3-%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E5%8C%96%E3%81%95%E3%82%8C%E3%81%9F%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E4%BF%9D%E8%AD%B7%E3%81%99%E3%82%8B%E8%A6%81%E7%B4%A0%E6%8A%80%E8%A1%93-Liz-Rice/dp/4295016403)
-[3] [コンテナと VM](https://www.redhat.com/ja/topics/containers/containers-vs-vms)
-[4] [docker hub](https://hub.docker.com/)
-[5] [docker hub クラウドネイティブなソフトウェアの導入を簡単に](https://www.docker.com/ja-jp/products/docker-hub/)
-[6] [dockerが使うUnionFileSystemを僕なりに解釈した](https://namu-r21.hatenablog.com/entry/2016/10/27/013006)
-[7] [コンテナセキュリティ コンテナ化されたアプリケーションを保護する要素技術](https://book.impress.co.jp/books/1122101051)
-[8] [コンテナの標準仕様について調査してみた件](https://qiita.com/mamomamo/items/448a8edf6d4ccfc22bbd)
-[9] [OCI Image Format Specification](https://github.com/opencontainers/image-spec)
-[10] [Dockerコンテナのレイヤ構造とは？](https://qiita.com/okmtz/items/f8231c83134a6363647b)
-[11] [UnionFS で Docker のレイヤ構造を理解する](https://christina04.hatenablog.com/entry/2016/01/26/204659)
+[1] [docker](https://www.docker.com/)\
+[2] [コンテナセキュリティ　コンテナ化されたアプリケーションを保護する要素技術 ](https://www.amazon.co.jp/%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3-%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E5%8C%96%E3%81%95%E3%82%8C%E3%81%9F%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E4%BF%9D%E8%AD%B7%E3%81%99%E3%82%8B%E8%A6%81%E7%B4%A0%E6%8A%80%E8%A1%93-Liz-Rice/dp/4295016403)\
+[3] [コンテナと VM](https://www.redhat.com/ja/topics/containers/containers-vs-vms)\
+[4] [docker hub](https://hub.docker.com/)\
+[5] [docker hub クラウドネイティブなソフトウェアの導入を簡単に](https://www.docker.com/ja-jp/products/docker-hub/)\
+[6] [dockerが使うUnionFileSystemを僕なりに解釈した](https://namu-r21.hatenablog.com/entry/2016/10/27/013006)\
+[7] [コンテナセキュリティ コンテナ化されたアプリケーションを保護する要素技術](https://book.impress.co.jp/books/1122101051)\
+[8] [コンテナの標準仕様について調査してみた件](https://qiita.com/mamomamo/items/448a8edf6d4ccfc22bbd)\
+[9] [OCI Image Format Specification](https://github.com/opencontainers/image-spec)\
+[10] [Dockerコンテナのレイヤ構造とは？](https://qiita.com/okmtz/items/f8231c83134a6363647b)\
+[11] [UnionFS で Docker のレイヤ構造を理解する](https://christina04.hatenablog.com/entry/2016/01/26/204659)\
 [12] [Open Container Initiative](https://opencontainers.org/)
