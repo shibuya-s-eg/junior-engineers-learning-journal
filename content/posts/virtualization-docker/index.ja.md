@@ -246,7 +246,7 @@ Dockerはコンテナ単位でCgroupのグループを作成し、リソース�
 
 それでは実際にCgroupを見ていきましょう。
 
-/sys/fs/cgroupの写真
+{{< image src="fs-cgroup.png" width="800px" height="600px" caption="" >}}
 
 Linuxカーネルは/sys/fs/cgroupに擬似ファイルシステムを作成し、Cgroupに関連する情報を提供します。
 
@@ -258,7 +258,7 @@ Linuxカーネルは/sys/fs/cgroupに擬似ファイルシステムを作成し�
 
 Linuxの擬似ファイルシステムのは以下のようなものがあります。
 * /proc\
-プロセス情報やシステム情報をふぁいるけいしきで提供
+プロセス情報やシステム情報をファイル形式で提供
 * /sys\
 デバイスやカーネル内部設定の情報/操作をファイル形式で提供
 * /dev\
@@ -266,7 +266,6 @@ Linuxの擬似ファイルシステムのは以下のようなものがありま
 
 {{< /admonition >}}
 
-{{< image src="fs-cgroup.png" width="800px" height="600px" caption="" >}}
 {{< image src="cgroup-nolimit.png" width="800px" height="600px" caption="" >}}
 {{< image src="cgroup-oomkiller.png" width="800px" height="600px" caption="" >}}
 
