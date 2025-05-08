@@ -27,7 +27,7 @@ lightgallery: true
 *
 *
 *
-hoge
+
 ## 0　はじめに
 
 ### 0.1　コンテナの歴史
